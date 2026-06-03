@@ -1,54 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <script>if(window.innerWidth>=900)window.location.href='DsbDesk.html';</script>
+    <script>if (window.innerWidth >= 900) window.location.href = 'DsbDesk.html';</script>
     <title>Joyería — Móvil</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <style>
-        * { font-family: 'Space Grotesk', sans-serif; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .sidebar-item { transition: all 0.2s ease; }
-        .sidebar-item:hover { background: rgba(234,179,8,0.1); color: #eab308; }
-        .sidebar-item.active { background: rgba(234,179,8,0.15); color: #eab308; border-left: 3px solid #eab308; }
-        .trend-up { color: #4ade80; }
-        .trend-down { color: #f87171; }
-        .trend-flat { color: #94a3b8; }
-        ::-webkit-scrollbar { width: 4px; height: 4px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 2px; }
-        .drawer { transition: transform 0.3s ease; }
-        .drawer.open { transform: translateX(0); }
-        .overlay { transition: opacity 0.3s ease; }
-        .tab-btn.active { background: rgba(234,179,8,0.15); color: #eab308; border-bottom: 2px solid #eab308; }
-        .sticky-tabs { position: sticky; top: 56px; z-index: 5; background: #161b22; }
-        .api-green { color: #4ade80; }
-        .api-yellow { color: #facc15; }
-        .api-orange { color: #fb923c; }
-        .api-red { color: #ef4444; }
-        .scroll-smooth { -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
-        .sidebar-mobile { transform: translateX(-100%); transition: transform 0.3s ease; }
-        .sidebar-mobile.open { transform: translateX(0); }
-        .fab-calc { position: fixed; bottom: 20px; right: 16px; z-index: 25; width: 48px; height: 48px; border-radius: 50%; background: #1e293b; border: 1px solid #475569; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.5); transition: all 0.2s ease; }
-        .fab-calc:active { transform: scale(0.95); background: #334155; }
+        * {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .sidebar-item {
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(234, 179, 8, 0.1);
+            color: #eab308;
+        }
+
+        .sidebar-item.active {
+            background: rgba(234, 179, 8, 0.15);
+            color: #eab308;
+            border-left: 3px solid #eab308;
+        }
+
+        .trend-up {
+            color: #4ade80;
+        }
+
+        .trend-down {
+            color: #f87171;
+        }
+
+        .trend-flat {
+            color: #94a3b8;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 2px;
+        }
+
+        .drawer {
+            transition: transform 0.3s ease;
+        }
+
+        .drawer.open {
+            transform: translateX(0);
+        }
+
+        .overlay {
+            transition: opacity 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: rgba(234, 179, 8, 0.15);
+            color: #eab308;
+            border-bottom: 2px solid #eab308;
+        }
+
+        .sticky-tabs {
+            position: sticky;
+            top: 56px;
+            z-index: 5;
+            background: #161b22;
+        }
+
+        .api-green {
+            color: #4ade80;
+        }
+
+        .api-yellow {
+            color: #facc15;
+        }
+
+        .api-orange {
+            color: #fb923c;
+        }
+
+        .api-red {
+            color: #ef4444;
+        }
+
+        .scroll-smooth {
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .sidebar-mobile {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-mobile.open {
+            transform: translateX(0);
+        }
+
+        .fab-calc {
+            position: fixed;
+            bottom: 20px;
+            right: 16px;
+            z-index: 25;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #1e293b;
+            border: 1px solid #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .fab-calc:active {
+            transform: scale(0.95);
+            background: #334155;
+        }
     </style>
 </head>
+
 <body class="bg-[#0d1117] text-slate-200 min-h-screen">
 
     <div id="sidebar-overlay" class="overlay fixed inset-0 bg-black/60 z-20 hidden" onclick="closeSidebar()"></div>
 
-    <aside id="sidebar" class="w-60 bg-[#161b22] border-r border-slate-800 flex-col fixed h-full z-30 sidebar-mobile hidden">
-        <div class="p-5 border-b border-slate-800"><div class="flex items-center gap-3"><div class="w-9 h-9 bg-yellow-500 rounded-lg flex items-center justify-center text-black font-bold text-base">Au</div><div><div class="text-base font-bold text-white">Joyería v4.0</div><div class="text-sm text-slate-500">Sistema de Gestión</div></div></div></div>
-        <nav class="flex-1 p-3 space-y-1 overflow-y-auto text-base"><div class="text-sm uppercase tracking-widest text-slate-600 px-3 py-2 mt-2">Módulos</div><a class="sidebar-item active flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer">📊 Dashboard</a><a class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📋 Presupuestos</a><a class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📦 Inventario</a><a class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">🛒 Compras</a><a class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📊 Reportes</a><a class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">⚙️ Configuración</a></nav>
-        <div class="p-4 border-t border-slate-800"><div class="flex items-center gap-3"><div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-sm font-bold">AU</div><div><div class="text-sm font-medium text-white">Sistema</div><div class="text-sm text-slate-500">Automático</div></div></div></div>
+    <aside id="sidebar"
+        class="w-60 bg-[#161b22] border-r border-slate-800 flex-col fixed h-full z-30 sidebar-mobile hidden">
+        <div class="p-5 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-9 h-9 bg-yellow-500 rounded-lg flex items-center justify-center text-black font-bold text-base">
+                    Au</div>
+                <div>
+                    <div class="text-base font-bold text-white">Joyería v4.0</div>
+                    <div class="text-sm text-slate-500">Sistema de Gestión</div>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 p-3 space-y-1 overflow-y-auto text-base">
+            <div class="text-sm uppercase tracking-widest text-slate-600 px-3 py-2 mt-2">Módulos</div><a
+                class="sidebar-item active flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer">📊
+                Dashboard</a><a
+                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📋
+                Presupuestos</a><a
+                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📦
+                Inventario</a><a
+                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">🛒
+                Compras</a><a
+                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📊
+                Reportes</a><a
+                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">⚙️
+                Configuración</a>
+        </nav>
+        <div class="p-4 border-t border-slate-800">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-sm font-bold">AU
+                </div>
+                <div>
+                    <div class="text-sm font-medium text-white">Sistema</div>
+                    <div class="text-sm text-slate-500">Automático</div>
+                </div>
+            </div>
+        </div>
     </aside>
 
     <main class="flex-1 flex flex-col min-h-screen">
-        <header class="bg-[#161b22] border-b border-slate-800 px-4 py-3 flex items-center justify-between sticky top-0 z-10">
-            <div class="flex items-center gap-3"><button id="menu-toggle" class="text-slate-400 hover:text-white text-xl">☰</button><div><h1 class="text-lg font-bold text-white">Dashboard</h1><p class="text-xs text-slate-500">Resumen de precios y PVP</p></div></div>
-            <div class="flex items-center gap-2 text-sm"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="text-slate-400 text-xs hidden sm:inline" id="fuente-header">—</span><button id="btn-actualizar" class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1 transition">↻ Actualizar</button></div>
+        <header
+            class="bg-[#161b22] border-b border-slate-800 px-4 py-3 flex items-center justify-between sticky top-0 z-10">
+            <div class="flex items-center gap-3"><button id="menu-toggle"
+                    class="text-slate-400 hover:text-white text-xl">☰</button>
+                <div>
+                    <h1 class="text-lg font-bold text-white">Dashboard</h1>
+                    <p class="text-xs text-slate-500">Resumen de precios y PVP</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 text-sm"><span
+                    class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span
+                    class="text-slate-400 text-xs hidden sm:inline" id="fuente-header">—</span><button
+                    id="btn-actualizar"
+                    class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1 transition">↻
+                    Actualizar</button></div>
         </header>
 
         <div class="p-3 space-y-4 flex-1 pb-20">
@@ -61,15 +213,21 @@
                 <div class="space-y-3" id="pvp-movil"></div>
             </div>
             <div>
-                <div class="flex items-center gap-2 mb-2"><div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Mercado</div><span class="text-[10px] text-slate-600 mono bg-slate-800 px-1.5 py-0.5 rounded" id="market-ts-movil">—</span></div>
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Mercado</div><span
+                        class="text-[10px] text-slate-600 mono bg-slate-800 px-1.5 py-0.5 rounded"
+                        id="market-ts-movil">—</span>
+                </div>
                 <div class="grid grid-cols-2 gap-2" id="mercado-movil"></div>
             </div>
             <div>
                 <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Negocio — Spot + PVP</h2>
-                <div class="bg-[#161b22] border border-slate-800 rounded-xl overflow-x-auto scroll-smooth" id="negocio-movil"></div>
+                <div class="bg-[#161b22] border border-slate-800 rounded-xl overflow-x-auto scroll-smooth"
+                    id="negocio-movil"></div>
             </div>
         </div>
-        <footer class="border-t border-slate-800 px-3 py-2 flex items-center justify-between text-[10px] text-slate-600">
+        <footer
+            class="border-t border-slate-800 px-3 py-2 flex items-center justify-between text-[10px] text-slate-600">
             <span>TC: 30 min | Metales: 9am, 12pm, 4pm | API: <span id="api-count" class="font-medium">—</span></span>
             <span class="mono" id="live-clock"></span>
         </footer>
@@ -78,23 +236,107 @@
     <button id="fab-calc" class="fab-calc" onclick="openCalc()">🧮</button>
     <div id="calc-overlay" class="overlay fixed inset-0 bg-black/60 z-20 hidden" onclick="closeCalc()"></div>
 
-    <div id="drawer" class="drawer fixed right-0 top-0 h-full w-full bg-[#161b22] border-l border-slate-800 z-30 transform translate-x-full shadow-2xl overflow-y-auto overscroll-contain">
-        <div class="sticky top-0 bg-[#161b22] border-b border-slate-800 px-4 py-3 flex items-center justify-between z-10"><h2 class="text-base font-bold text-white">🧮 Calculadora</h2><button class="text-slate-400 hover:text-white text-lg" onclick="closeCalc()">✕</button></div>
-        <div class="sticky-tabs flex border-b border-slate-800"><button class="tab-btn active flex-1 py-2.5 text-sm font-semibold text-slate-400" data-tab="hoy">HOY</button><button class="tab-btn flex-1 py-2.5 text-sm font-semibold text-slate-400" data-tab="historico">HISTÓRICO</button></div>
+    <div id="drawer"
+        class="drawer fixed right-0 top-0 h-full w-full bg-[#161b22] border-l border-slate-800 z-30 transform translate-x-full shadow-2xl overflow-y-auto overscroll-contain">
+        <div
+            class="sticky top-0 bg-[#161b22] border-b border-slate-800 px-4 py-3 flex items-center justify-between z-10">
+            <h2 class="text-base font-bold text-white">🧮 Calculadora</h2><button
+                class="text-slate-400 hover:text-white text-lg" onclick="closeCalc()">✕</button>
+        </div>
+        <div class="sticky-tabs flex border-b border-slate-800"><button
+                class="tab-btn active flex-1 py-2.5 text-sm font-semibold text-slate-400"
+                data-tab="hoy">HOY</button><button class="tab-btn flex-1 py-2.5 text-sm font-semibold text-slate-400"
+                data-tab="historico">HISTÓRICO</button></div>
         <div class="p-4 space-y-3">
             <div id="tab-hoy" class="space-y-3">
-                <div class="grid grid-cols-2 gap-2"><div><label class="text-[10px] text-slate-400 block mb-0.5">Metal</label><select id="calc-metal" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"><option value="1">Oro (Au)</option><option value="2">Plata (Ag)</option><option value="3">Platino (Pt)</option><option value="4">Paladio (Pd)</option></select></div><div><label class="text-[10px] text-slate-400 block mb-0.5">Ley</label><select id="calc-ley" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select></div></div>
-                <div class="grid grid-cols-2 gap-2"><div><label class="text-[10px] text-slate-400 block mb-0.5">Color</label><select id="calc-color" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select></div><div><label class="text-[10px] text-slate-400 block mb-0.5">Merma</label><select id="calc-merma" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select></div></div>
-                <div class="grid grid-cols-2 gap-2"><div><label class="text-[10px] text-slate-400 block mb-0.5">Mano obra</label><select id="calc-mo" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select></div><div><label class="text-[10px] text-slate-400 block mb-0.5">Utilidad</label><select id="calc-util" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select></div></div>
-                <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-3 flex items-center justify-between"><div><div class="text-sm font-semibold text-red-400">🛡️ Factor seguridad</div><div class="text-[10px] text-slate-400">+2% sobre costo</div></div><button id="toggle-seguridad" class="w-11 h-6 bg-slate-700 rounded-full relative transition"><span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition"></span></button></div>
-                <div class="bg-slate-900/50 rounded-lg p-3 text-xs space-y-1"><div class="flex justify-between"><span class="text-slate-400">Spot 24K gr (S/)</span><span class="text-white mono font-bold" id="spot-calc">—</span></div><div class="flex justify-between"><span class="text-slate-400">TC Venta</span><span class="text-white mono font-bold" id="tc-calc">—</span></div></div>
-                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 space-y-2"><div class="flex justify-between items-center"><span class="text-sm text-slate-300">PVP / gr</span><span class="text-lg font-bold text-yellow-400 mono" id="pvp-gr">S/ —</span></div><div class="border-t border-yellow-500/20 pt-2 space-y-2"><div class="flex items-center gap-2"><span class="text-xs text-slate-400">Peso</span><input type="number" id="peso1" value="2.0" step="0.1" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-sm text-white w-16 text-center"><span class="text-xs text-slate-400">gr</span><span class="text-sm font-bold text-white mono ml-auto" id="total-p1">S/ —</span></div><div class="flex items-center gap-2"><span class="text-xs text-slate-400">Peso</span><input type="number" id="peso2" value="5.0" step="0.1" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-sm text-white w-16 text-center"><span class="text-xs text-slate-400">gr</span><span class="text-sm font-bold text-white mono ml-auto" id="total-p2">S/ —</span></div><div class="flex items-center gap-2"><span class="text-xs text-slate-400">Peso</span><input type="number" id="peso3" value="10.0" step="0.1" class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-sm text-white w-16 text-center"><span class="text-xs text-slate-400">gr</span><span class="text-sm font-bold text-white mono ml-auto" id="total-p3">S/ —</span></div></div></div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div><label class="text-[10px] text-slate-400 block mb-0.5">Metal</label><select id="calc-metal"
+                            class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white">
+                            <option value="1">Oro (Au)</option>
+                            <option value="2">Plata (Ag)</option>
+                            <option value="3">Platino (Pt)</option>
+                            <option value="4">Paladio (Pd)</option>
+                        </select></div>
+                    <div><label class="text-[10px] text-slate-400 block mb-0.5">Ley</label><select id="calc-ley"
+                            class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div><label class="text-[10px] text-slate-400 block mb-0.5">Color</label><select id="calc-color"
+                            class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select>
+                    </div>
+                    <div><label class="text-[10px] text-slate-400 block mb-0.5">Merma</label><select id="calc-merma"
+                            class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <div><label class="text-[10px] text-slate-400 block mb-0.5">Mano obra</label><select id="calc-mo"
+                            class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select>
+                    </div>
+                    <div><label class="text-[10px] text-slate-400 block mb-0.5">Utilidad</label><select id="calc-util"
+                            class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></select>
+                    </div>
+                </div>
+                <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-3 flex items-center justify-between">
+                    <div>
+                        <div class="text-sm font-semibold text-red-400">🛡️ Factor seguridad</div>
+                        <div class="text-[10px] text-slate-400">+2% sobre costo</div>
+                    </div><button id="toggle-seguridad"
+                        class="w-11 h-6 bg-slate-700 rounded-full relative transition"><span
+                            class="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition"></span></button>
+                </div>
+                <div class="bg-slate-900/50 rounded-lg p-3 text-xs space-y-1">
+                    <div class="flex justify-between"><span class="text-slate-400">Spot 24K gr (S/)</span><span
+                            class="text-white mono font-bold" id="spot-calc">—</span></div>
+                    <div class="flex justify-between"><span class="text-slate-400">TC Venta</span><span
+                            class="text-white mono font-bold" id="tc-calc">—</span></div>
+                </div>
+                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 space-y-2">
+                    <div class="flex justify-between items-center"><span class="text-sm text-slate-300">PVP /
+                            gr</span><span class="text-lg font-bold text-yellow-400 mono" id="pvp-gr">S/ —</span></div>
+                    <div class="border-t border-yellow-500/20 pt-2 space-y-2">
+                        <div class="flex items-center gap-2"><span class="text-xs text-slate-400">Peso</span><input
+                                type="number" id="peso1" value="2.0" step="0.1"
+                                class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-sm text-white w-16 text-center"><span
+                                class="text-xs text-slate-400">gr</span><span
+                                class="text-sm font-bold text-white mono ml-auto" id="total-p1">S/ —</span></div>
+                        <div class="flex items-center gap-2"><span class="text-xs text-slate-400">Peso</span><input
+                                type="number" id="peso2" value="5.0" step="0.1"
+                                class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-sm text-white w-16 text-center"><span
+                                class="text-xs text-slate-400">gr</span><span
+                                class="text-sm font-bold text-white mono ml-auto" id="total-p2">S/ —</span></div>
+                        <div class="flex items-center gap-2"><span class="text-xs text-slate-400">Peso</span><input
+                                type="number" id="peso3" value="10.0" step="0.1"
+                                class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-sm text-white w-16 text-center"><span
+                                class="text-xs text-slate-400">gr</span><span
+                                class="text-sm font-bold text-white mono ml-auto" id="total-p3">S/ —</span></div>
+                    </div>
+                </div>
             </div>
             <div id="tab-historico" class="space-y-3 hidden">
-                <div class="bg-slate-900/30 rounded-lg p-3 text-xs text-slate-400"><p>Usa los mismos factores del panel HOY.<br>Solo elige la fecha para comparar.</p></div>
-                <div><label class="text-[10px] text-slate-400 block mb-0.5">Fecha de consulta</label><input type="date" id="fecha-historica" value="2026-02-14" class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white"></div>
-                <div class="bg-slate-900/50 rounded-lg p-3 space-y-1.5"><div class="flex justify-between text-xs"><span class="text-slate-400">Spot ese día</span><span class="text-white mono font-bold" id="spot-hist">—</span></div><div class="flex justify-between text-xs"><span class="text-slate-400">TC ese día</span><span class="text-white mono font-bold" id="tc-hist">—</span></div></div>
-                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 space-y-2"><div class="flex justify-between"><span class="text-sm text-slate-300">PVP ese día</span><span class="text-lg font-bold text-yellow-400 mono" id="pvp-gr-hist">S/ —</span></div><div class="border-t border-yellow-500/20 pt-2 space-y-1.5"><div class="flex justify-between text-xs"><span class="text-slate-400">PVP HOY</span><span class="font-bold text-white mono" id="pvp-hoy-ref">S/ —</span></div><div class="flex justify-between text-xs"><span class="text-slate-400">Diferencia</span><span class="font-bold mono" id="diff-pvp">—</span></div></div></div>
+                <div class="bg-slate-900/30 rounded-lg p-3 text-xs text-slate-400">
+                    <p>Usa los mismos factores del panel HOY.<br>Solo elige la fecha para comparar.</p>
+                </div>
+                <div><label class="text-[10px] text-slate-400 block mb-0.5">Fecha de consulta</label><input type="date"
+                        id="fecha-historica" value="2026-02-14"
+                        class="w-full bg-slate-800 border border-slate-700 rounded px-2 py-1.5 text-sm text-white">
+                </div>
+                <div class="bg-slate-900/50 rounded-lg p-3 space-y-1.5">
+                    <div class="flex justify-between text-xs"><span class="text-slate-400">Spot ese día</span><span
+                            class="text-white mono font-bold" id="spot-hist">—</span></div>
+                    <div class="flex justify-between text-xs"><span class="text-slate-400">TC ese día</span><span
+                            class="text-white mono font-bold" id="tc-hist">—</span></div>
+                </div>
+                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 space-y-2">
+                    <div class="flex justify-between"><span class="text-sm text-slate-300">PVP ese día</span><span
+                            class="text-lg font-bold text-yellow-400 mono" id="pvp-gr-hist">S/ —</span></div>
+                    <div class="border-t border-yellow-500/20 pt-2 space-y-1.5">
+                        <div class="flex justify-between text-xs"><span class="text-slate-400">PVP HOY</span><span
+                                class="font-bold text-white mono" id="pvp-hoy-ref">S/ —</span></div>
+                        <div class="flex justify-between text-xs"><span class="text-slate-400">Diferencia</span><span
+                                class="font-bold mono" id="diff-pvp">—</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -111,16 +353,16 @@
         const SPOT_KEYS = { 1: 'UI_MC_M1_GR_VAL_LOC', 2: 'UI_MC_M2_GR_VAL_LOC', 3: 'UI_MC_M3_GR_VAL_LOC', 4: 'UI_MC_M4_GR_VAL_LOC' };
         const PROVEEDOR = { 1: 0.005, 2: 0, 3: 0.005, 4: 0.005 };
         const FACTORES = {
-            1: { nombre: 'Oro', leyes: {'24K':1,'22K':0.916,'21K':0.875,'18K':0.75,'16K':0.666,'14K':0.585}, colores: {'Rojo':1,'Rosa':1,'Amarillo':1.05,'Blanco':1.12}, mermas: {'Estándar 10%':1.10,'Detallado 15%':1.15,'Especial 18%':1.18}, mo: {'Estándar S/35':35,'Técnica S/55':55,'Maestra S/90':90}, utilidades: {'Por Peso +20g':1.20,'Por Cantidad':1.25,'Básica 30%':1.30,'Estándar 35%':1.35,'Exclusiva 40%':1.40}, cierre: {red:5,umb:2.5,gatSube:3,gatBaja:15} },
-            2: { nombre: 'Plata', leyes: {'999 Fina':1,'950':0.95,'925':0.925,'800':0.80}, colores: {'Plata':1}, mermas: {'Sin merma':1}, mo: {'Sin MO':0}, utilidades: {'Volumen 150%':2.50,'Estándar 240%':3.40,'Exclusiva 320%':4.20}, cierre: {red:2,umb:0.5,gatSube:0.5,gatBaja:3} },
-            3: { nombre: 'Platino', leyes: {'999 Fino':1,'950':0.95,'900':0.90}, colores: {'Platino':1}, mermas: {'Detallado 15%':1.15,'Especial 20%':1.20}, mo: {'Sin MO':0,'Estándar S/35':35,'Técnica S/80':80,'Maestra S/120':120}, utilidades: {'Estándar 35%':1.35,'Exclusiva 40%':1.40}, cierre: {red:10,umb:5,gatSube:5,gatBaja:15} },
-            4: { nombre: 'Paladio', leyes: {'999 Fino':1,'950':0.95}, colores: {'Paladio':1}, mermas: {'Detallado 15%':1.15,'Especial 20%':1.20}, mo: {'Sin MO':0,'Estándar S/35':35,'Técnica S/80':80,'Maestra S/120':120}, utilidades: {'Estándar 35%':1.35,'Exclusiva 40%':1.40}, cierre: {red:10,umb:5,gatSube:5,gatBaja:15} }
+            1: { nombre: 'Oro', leyes: { '24K': 1, '22K': 0.916, '21K': 0.875, '18K': 0.75, '16K': 0.666, '14K': 0.585 }, colores: { 'Rojo': 1, 'Rosa': 1, 'Amarillo': 1.05, 'Blanco': 1.12 }, mermas: { 'Estándar 10%': 1.10, 'Detallado 15%': 1.15, 'Especial 18%': 1.18 }, mo: { 'Estándar S/35': 35, 'Técnica S/55': 55, 'Maestra S/90': 90 }, utilidades: { 'Por Peso +20g': 1.20, 'Por Cantidad': 1.25, 'Básica 30%': 1.30, 'Estándar 35%': 1.35, 'Exclusiva 40%': 1.40 }, cierre: { red: 5, umb: 2.5, gatSube: 3, gatBaja: 15 } },
+            2: { nombre: 'Plata', leyes: { '999 Fina': 1, '950': 0.95, '925': 0.925, '800': 0.80 }, colores: { 'Plata': 1 }, mermas: { 'Sin merma': 1 }, mo: { 'Sin MO': 0 }, utilidades: { 'Volumen 150%': 2.50, 'Estándar 240%': 3.40, 'Exclusiva 320%': 4.20 }, cierre: { red: 2, umb: 0.5, gatSube: 0.5, gatBaja: 3 } },
+            3: { nombre: 'Platino', leyes: { '999 Fino': 1, '950': 0.95, '900': 0.90 }, colores: { 'Platino': 1 }, mermas: { 'Detallado 15%': 1.15, 'Especial 20%': 1.20 }, mo: { 'Sin MO': 0, 'Estándar S/35': 35, 'Técnica S/80': 80, 'Maestra S/120': 120 }, utilidades: { 'Estándar 35%': 1.35, 'Exclusiva 40%': 1.40 }, cierre: { red: 10, umb: 5, gatSube: 5, gatBaja: 15 } },
+            4: { nombre: 'Paladio', leyes: { '999 Fino': 1, '950': 0.95 }, colores: { 'Paladio': 1 }, mermas: { 'Detallado 15%': 1.15, 'Especial 20%': 1.20 }, mo: { 'Sin MO': 0, 'Estándar S/35': 35, 'Técnica S/80': 80, 'Maestra S/120': 120 }, utilidades: { 'Estándar 35%': 1.35, 'Exclusiva 40%': 1.40 }, cierre: { red: 10, umb: 5, gatSube: 5, gatBaja: 15 } }
         };
 
         async function loadData() {
             const btn = document.getElementById('btn-actualizar');
             btn.disabled = true;
-            btn.innerHTML = '⟳';
+            btn.innerHTML = 'Actualizando...';
             try {
                 const r = await fetch(WEB_APP_URL);
                 const j = await r.json();
@@ -135,41 +377,41 @@
             }
         }
 
-        function fmt(v,d=3){ const n=parseFloat(v); return isNaN(n)?null:n.toFixed(d); }
-        function fmtS(v){ const f=fmt(v); return f!==null?`S/ ${f}`:null; }
-        function icoCls(v){ if(v==='▲')return'trend-up'; if(v==='▼')return'trend-down'; return'trend-flat'; }
-        function difCls(v){ const n=parseFloat(v); if(isNaN(n))return'trend-flat'; if(n>0)return'trend-up'; if(n<0)return'trend-down'; return'trend-flat'; }
+        function fmt(v, d = 3) { const n = parseFloat(v); return isNaN(n) ? null : n.toFixed(d); }
+        function fmtS(v) { const f = fmt(v); return f !== null ? `S/ ${f}` : null; }
+        function icoCls(v) { if (v === '▲') return 'trend-up'; if (v === '▼') return 'trend-down'; return 'trend-flat'; }
+        function difCls(v) { const n = parseFloat(v); if (isNaN(n)) return 'trend-flat'; if (n > 0) return 'trend-up'; if (n < 0) return 'trend-down'; return 'trend-flat'; }
 
-        function renderMovil(){
-            const d=cache;
+        function renderMovil() {
+            const d = cache;
             document.getElementById('fuente-header').textContent = d.UI_SIS_FUENTE_ACT || '—';
             document.getElementById('market-ts-movil').textContent = d.UI_MC_TS_API || '—';
-            document.getElementById('divisas-movil').innerHTML = ['REF','VTA','CPRA'].map(k=>{
-                const id=k==='REF'?'ref':k==='VTA'?'vta':'cpra';
-                const etq=d[`UI_TC_${k}_ETQ`]||(k==='REF'?'Promedio':k==='VTA'?'Venta':'Compra');
-                const val=d[`UI_TC_${k}_VAL_${k==='REF'?'API':'LOC'}`];
-                const dif=d[`UI_TC_${k}_DIF`]; const ico=d[`UI_TC_${k}_ICO`]||'';
-                return `<div class="flex justify-between items-center"><span class="text-xs text-slate-400">${etq}</span><div class="text-right flex items-center gap-1"><span class="text-[10px] mono ${difCls(dif)}">${dif!=null?(parseFloat(dif)>=0?'+':'')+parseFloat(dif).toFixed(3):'—'}</span><span class="text-sm font-bold text-white mono">${fmtS(val)||'—'}</span><span class="text-[10px] ${icoCls(ico)}">${ico}</span></div></div>`;
+            document.getElementById('divisas-movil').innerHTML = ['REF', 'VTA', 'CPRA'].map(k => {
+                const id = k === 'REF' ? 'ref' : k === 'VTA' ? 'vta' : 'cpra';
+                const etq = d[`UI_TC_${k}_ETQ`] || (k === 'REF' ? 'Promedio' : k === 'VTA' ? 'Venta' : 'Compra');
+                const val = d[`UI_TC_${k}_VAL_${k === 'REF' ? 'API' : 'LOC'}`];
+                const dif = d[`UI_TC_${k}_DIF`]; const ico = d[`UI_TC_${k}_ICO`] || '';
+                return `<div class="flex justify-between items-center"><span class="text-xs text-slate-400">${etq}</span><div class="text-right flex items-center gap-1"><span class="text-[10px] mono ${difCls(dif)}">${dif != null ? (parseFloat(dif) >= 0 ? '+' : '') + parseFloat(dif).toFixed(3) : '—'}</span><span class="text-sm font-bold text-white mono">${fmtS(val) || '—'}</span><span class="text-[10px] ${icoCls(ico)}">${ico}</span></div></div>`;
             }).join('');
 
             _pvpActual[1] = parseFloat(d.UI_NG_PM_M1_PVP_VAL || d.UI_NG_MD_M1_PVP_VAL || d.UI_NG_AM_M1_PVP_VAL || d.UI_NG_CIE_M1_PVP_VAL) || 605;
             _pvpActual[2] = parseFloat(d.UI_NG_PM_M2_PVP_VAL || d.UI_NG_MD_M2_PVP_VAL || d.UI_NG_AM_M2_PVP_VAL || d.UI_NG_CIE_M2_PVP_VAL) || 28;
             const pvpOroDif = d.UI_NG_PM_M1_PVP_DIF || d.UI_NG_MD_M1_PVP_DIF;
             document.getElementById('pvp-movil').innerHTML = `
-                <div><div class="text-xs text-slate-400 mb-0.5">Oro 18K gramo</div><div class="flex items-baseline justify-between"><span class="text-xl font-bold text-yellow-400 mono">${fmtS(_pvpActual[1])||'—'}</span><span class="text-xs ${difCls(pvpOroDif)}">${pvpOroDif!=null?(parseFloat(pvpOroDif)>=0?'▲ +':'▼ ')+parseFloat(pvpOroDif).toFixed(3):'● 0.000'}</span></div><div class="text-[10px] text-slate-500 mt-0.5">${d.UI_NG_PM_TS||d.UI_NG_MD_TS||'—'}</div></div>
-                <div class="pt-2 border-t border-slate-800"><div class="text-xs text-slate-400 mb-0.5">Plata 950 gramo</div><div class="flex items-baseline justify-between"><span class="text-xl font-bold text-slate-300 mono">${fmtS(_pvpActual[2])||'—'}</span><span class="text-xs trend-flat">● 0.000</span></div><div class="text-[10px] text-slate-500 mt-0.5">${d.UI_NG_PM_TS||d.UI_NG_MD_TS||'—'}</div></div>`;
+                <div><div class="text-xs text-slate-400 mb-0.5">Oro 18K gramo</div><div class="flex items-baseline justify-between"><span class="text-xl font-bold text-yellow-400 mono">${fmtS(_pvpActual[1]) || '—'}</span><span class="text-xs ${difCls(pvpOroDif)}">${pvpOroDif != null ? (parseFloat(pvpOroDif) >= 0 ? '▲ +' : '▼ ') + parseFloat(pvpOroDif).toFixed(3) : '● 0.000'}</span></div><div class="text-[10px] text-slate-500 mt-0.5">${d.UI_NG_PM_TS || d.UI_NG_MD_TS || '—'}</div></div>
+                <div class="pt-2 border-t border-slate-800"><div class="text-xs text-slate-400 mb-0.5">Plata 950 gramo</div><div class="flex items-baseline justify-between"><span class="text-xl font-bold text-slate-300 mono">${fmtS(_pvpActual[2]) || '—'}</span><span class="text-xs trend-flat">● 0.000</span></div><div class="text-[10px] text-slate-500 mt-0.5">${d.UI_NG_PM_TS || d.UI_NG_MD_TS || '—'}</div></div>`;
 
-            const metales=[1,2,3,4]; const nombres={1:'Oro',2:'Plata',3:'Platino',4:'Paladio'}; const emojis={1:'🪙',2:'🔘',3:'💍',4:'🔩'}; const borders={1:'border-amber-500/20',2:'border-slate-500/20',3:'border-sky-500/20',4:'border-teal-500/20'}; const colors={1:'text-amber-400',2:'text-slate-300',3:'text-sky-400',4:'text-teal-400'};
-            document.getElementById('mercado-movil').innerHTML = metales.map(m=>{
-                const ico=d[`UI_MC_M${m}_GR_ICO`]||''; const grLoc=fmtS(d[`UI_MC_M${m}_GR_VAL_LOC`]); const grApi=fmt(d[`UI_MC_M${m}_GR_VAL_API`]); const grDifLoc=d[`UI_MC_M${m}_GR_DIF_LOC`]!=null?parseFloat(d[`UI_MC_M${m}_GR_DIF_LOC`]).toFixed(3):null; const grDifApi=d[`UI_MC_M${m}_GR_DIF_API`]!=null?parseFloat(d[`UI_MC_M${m}_GR_DIF_API`]).toFixed(3):null; const ozLoc=fmtS(d[`UI_MC_M${m}_OZ_VAL_LOC`]); const ozApi=fmt(d[`UI_MC_M${m}_OZ_VAL_API`]); const ozDifLoc=d[`UI_MC_M${m}_OZ_DIF_LOC`]!=null?parseFloat(d[`UI_MC_M${m}_OZ_DIF_LOC`]).toFixed(3):null; const ozDifApi=d[`UI_MC_M${m}_OZ_DIF_API`]!=null?parseFloat(d[`UI_MC_M${m}_OZ_DIF_API`]).toFixed(3):null;
-                return `<div class="bg-[#161b22] border ${borders[m]} rounded-lg p-3"><div class="flex items-center gap-1.5 mb-2"><span class="text-base">${emojis[m]}</span><span class="font-bold ${colors[m]} text-xs">${nombres[m]}</span><span class="text-xs ${icoCls(ico)}">${ico}</span></div><div class="space-y-1.5"><div><div class="text-[10px] text-slate-500">Gramo</div><div class="text-sm font-bold text-white mono">${grLoc||'—'} <span class="${difCls(grDifLoc)} text-[10px]">${grDifLoc||'0.000'}</span></div><div class="text-[10px] text-slate-500 mono">${grApi?'$'+grApi:'—'} <span class="${difCls(grDifApi)} text-[10px]">${grDifApi||'0.000'}</span></div></div><div class="pt-1.5 border-t border-slate-700/50"><div class="text-[10px] text-slate-500">Onza</div><div class="text-xs font-medium text-slate-300 mono">${ozLoc||'—'} <span class="${difCls(ozDifLoc)} text-[10px]">${ozDifLoc||'0.000'}</span></div><div class="text-[10px] text-slate-500 mono">${ozApi?'$'+ozApi:'—'} <span class="${difCls(ozDifApi)} text-[10px]">${ozDifApi||'0.000'}</span></div></div></div></div>`;
+            const metales = [1, 2, 3, 4]; const nombres = { 1: 'Oro', 2: 'Plata', 3: 'Platino', 4: 'Paladio' }; const emojis = { 1: '🪙', 2: '🔘', 3: '💍', 4: '🔩' }; const borders = { 1: 'border-amber-500/20', 2: 'border-slate-500/20', 3: 'border-sky-500/20', 4: 'border-teal-500/20' }; const colors = { 1: 'text-amber-400', 2: 'text-slate-300', 3: 'text-sky-400', 4: 'text-teal-400' };
+            document.getElementById('mercado-movil').innerHTML = metales.map(m => {
+                const ico = d[`UI_MC_M${m}_GR_ICO`] || ''; const grLoc = fmtS(d[`UI_MC_M${m}_GR_VAL_LOC`]); const grApi = fmt(d[`UI_MC_M${m}_GR_VAL_API`]); const grDifLoc = d[`UI_MC_M${m}_GR_DIF_LOC`] != null ? parseFloat(d[`UI_MC_M${m}_GR_DIF_LOC`]).toFixed(3) : null; const grDifApi = d[`UI_MC_M${m}_GR_DIF_API`] != null ? parseFloat(d[`UI_MC_M${m}_GR_DIF_API`]).toFixed(3) : null; const ozLoc = fmtS(d[`UI_MC_M${m}_OZ_VAL_LOC`]); const ozApi = fmt(d[`UI_MC_M${m}_OZ_VAL_API`]); const ozDifLoc = d[`UI_MC_M${m}_OZ_DIF_LOC`] != null ? parseFloat(d[`UI_MC_M${m}_OZ_DIF_LOC`]).toFixed(3) : null; const ozDifApi = d[`UI_MC_M${m}_OZ_DIF_API`] != null ? parseFloat(d[`UI_MC_M${m}_OZ_DIF_API`]).toFixed(3) : null;
+                return `<div class="bg-[#161b22] border ${borders[m]} rounded-lg p-3"><div class="flex items-center gap-1.5 mb-2"><span class="text-base">${emojis[m]}</span><span class="font-bold ${colors[m]} text-xs">${nombres[m]}</span><span class="text-xs ${icoCls(ico)}">${ico}</span></div><div class="space-y-1.5"><div><div class="text-[10px] text-slate-500">Gramo</div><div class="text-sm font-bold text-white mono">${grLoc || '—'} <span class="${difCls(grDifLoc)} text-[10px]">${grDifLoc || '0.000'}</span></div><div class="text-[10px] text-slate-500 mono">${grApi ? '$' + grApi : '—'} <span class="${difCls(grDifApi)} text-[10px]">${grDifApi || '0.000'}</span></div></div><div class="pt-1.5 border-t border-slate-700/50"><div class="text-[10px] text-slate-500">Onza</div><div class="text-xs font-medium text-slate-300 mono">${ozLoc || '—'} <span class="${difCls(ozDifLoc)} text-[10px]">${ozDifLoc || '0.000'}</span></div><div class="text-[10px] text-slate-500 mono">${ozApi ? '$' + ozApi : '—'} <span class="${difCls(ozDifApi)} text-[10px]">${ozDifApi || '0.000'}</span></div></div></div></div>`;
             }).join('');
 
-            const boxes=['CIE','AM','MD','PM']; const filas=[{key:'M1_L1',lbl:'Oro 24K'},{key:'M1_L2',lbl:'Oro 18K'},{key:'M2_L1',lbl:'Plata 950'},{key:'M1_PVP',lbl:'PVP 18K',pvp:true},{key:'M2_PVP',lbl:'PVP 950',pvp:true}];
-            document.getElementById('negocio-movil').innerHTML = `<table class="w-full text-xs min-w-[550px]"><thead><tr class="bg-slate-900/50 border-b border-slate-800 text-[10px] uppercase tracking-wider text-slate-500"><th class="p-2 text-left sticky left-0 bg-slate-900/50 z-10">Metal</th>${boxes.map(b=>`<th class="p-2 text-right"><div>${d[`UI_NG_${b}_ETQ`]||b}</div><div class="normal-case text-slate-600 font-normal">${(d[`UI_NG_${b}_TS`]||'').replace('AU · ','').replace('JL · ','')}</div></th>`).join('')}</tr></thead><tbody class="divide-y divide-slate-800/50">${filas.map(f=>`<tr class="hover:bg-slate-800/20 ${f.pvp?'bg-yellow-500/5':''}"><td class="p-2 font-semibold ${f.pvp?'text-slate-300':'text-slate-200'} sticky left-0 bg-[#161b22] z-5">${f.lbl}</td>${boxes.map(b=>{const v=d[`UI_NG_${b}_${f.key}_VAL`],df=d[`UI_NG_${b}_${f.key}_DIF`];const color=f.pvp?(f.key.includes('M1')?'text-amber-400':'text-slate-300'):'text-white';return`<td class="p-2 text-right mono ${color} whitespace-nowrap">${fmtS(v)||'—'} <span class="${difCls(df)} text-[10px]">${df!=null?(parseFloat(df)>=0?'+':'')+parseFloat(df).toFixed(3):'—'}</span></td>`;}).join('')}</tr>`).join('')}</tbody></table>`;
+            const boxes = ['CIE', 'AM', 'MD', 'PM']; const filas = [{ key: 'M1_L1', lbl: 'Oro 24K' }, { key: 'M1_L2', lbl: 'Oro 18K' }, { key: 'M2_L1', lbl: 'Plata 950' }, { key: 'M1_PVP', lbl: 'PVP 18K', pvp: true }, { key: 'M2_PVP', lbl: 'PVP 950', pvp: true }];
+            document.getElementById('negocio-movil').innerHTML = `<table class="w-full text-xs min-w-[550px]"><thead><tr class="bg-slate-900/50 border-b border-slate-800 text-[10px] uppercase tracking-wider text-slate-500"><th class="p-2 text-left sticky left-0 bg-slate-900/50 z-10">Metal</th>${boxes.map(b => `<th class="p-2 text-right"><div>${d[`UI_NG_${b}_ETQ`] || b}</div><div class="normal-case text-slate-600 font-normal">${(d[`UI_NG_${b}_TS`] || '').replace('AU · ', '').replace('JL · ', '')}</div></th>`).join('')}</tr></thead><tbody class="divide-y divide-slate-800/50">${filas.map(f => `<tr class="hover:bg-slate-800/20 ${f.pvp ? 'bg-yellow-500/5' : ''}"><td class="p-2 font-semibold ${f.pvp ? 'text-slate-300' : 'text-slate-200'} sticky left-0 bg-[#161b22] z-5">${f.lbl}</td>${boxes.map(b => { const v = d[`UI_NG_${b}_${f.key}_VAL`], df = d[`UI_NG_${b}_${f.key}_DIF`]; const color = f.pvp ? (f.key.includes('M1') ? 'text-amber-400' : 'text-slate-300') : 'text-white'; return `<td class="p-2 text-right mono ${color} whitespace-nowrap">${fmtS(v) || '—'} <span class="${difCls(df)} text-[10px]">${df != null ? (parseFloat(df) >= 0 ? '+' : '') + parseFloat(df).toFixed(3) : '—'}</span></td>`; }).join('')}</tr>`).join('')}</tbody></table>`;
 
-            const api=d.UI_MC_CT_API; const apiEl=document.getElementById('api-count'); apiEl.textContent=api||'—'; apiEl.className='font-medium';
-            if(api<=40)apiEl.classList.add('api-green'); else if(api<=70)apiEl.classList.add('api-yellow'); else if(api<=90)apiEl.classList.add('api-orange'); else apiEl.classList.add('api-red');
+            const api = d.UI_MC_CT_API; const apiEl = document.getElementById('api-count'); apiEl.textContent = api || '—'; apiEl.className = 'font-medium';
+            if (api <= 40) apiEl.classList.add('api-green'); else if (api <= 70) apiEl.classList.add('api-yellow'); else if (api <= 90) apiEl.classList.add('api-orange'); else apiEl.classList.add('api-red');
 
             _spotBase = parseFloat(d.UI_MC_M1_GR_VAL_LOC) || 492.921;
             _tcVenta = parseFloat(d.UI_TC_VTA_VAL_LOC) || 3.416;
@@ -177,90 +419,97 @@
             actualizarCalculadora();
         }
 
-        const menuToggle=document.getElementById('menu-toggle'), sidebarEl=document.getElementById('sidebar'), sidebarOverlay=document.getElementById('sidebar-overlay');
-        function openSidebar(){sidebarEl.classList.add('open','flex');sidebarEl.classList.remove('hidden');sidebarOverlay.classList.remove('hidden');document.body.style.overflow='hidden';}
-        function closeSidebar(){sidebarEl.classList.remove('open','flex');sidebarEl.classList.add('hidden');sidebarOverlay.classList.add('hidden');document.body.style.overflow='';}
-        menuToggle.addEventListener('click',()=>{sidebarEl.classList.contains('open')?closeSidebar():openSidebar();});
-        sidebarOverlay.addEventListener('click',closeSidebar);
+        const menuToggle = document.getElementById('menu-toggle'), sidebarEl = document.getElementById('sidebar'), sidebarOverlay = document.getElementById('sidebar-overlay');
+        function openSidebar() { sidebarEl.classList.add('open', 'flex'); sidebarEl.classList.remove('hidden'); sidebarOverlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+        function closeSidebar() { sidebarEl.classList.remove('open', 'flex'); sidebarEl.classList.add('hidden'); sidebarOverlay.classList.add('hidden'); document.body.style.overflow = ''; }
+        menuToggle.addEventListener('click', () => { sidebarEl.classList.contains('open') ? closeSidebar() : openSidebar(); });
+        sidebarOverlay.addEventListener('click', closeSidebar);
 
-        function openCalc(){document.getElementById('drawer').classList.add('open');document.getElementById('calc-overlay').classList.remove('hidden');document.body.style.overflow='hidden';}
-        function closeCalc(){document.getElementById('drawer').classList.remove('open');document.getElementById('calc-overlay').classList.add('hidden');document.body.style.overflow='';}
-        document.getElementById('fab-calc').addEventListener('click',openCalc);
-        document.getElementById('calc-overlay').addEventListener('click',closeCalc);
+        function openCalc() { document.getElementById('drawer').classList.add('open'); document.getElementById('calc-overlay').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+        function closeCalc() { document.getElementById('drawer').classList.remove('open'); document.getElementById('calc-overlay').classList.add('hidden'); document.body.style.overflow = ''; }
+        document.getElementById('fab-calc').addEventListener('click', openCalc);
+        document.getElementById('calc-overlay').addEventListener('click', closeCalc);
 
-        const tabBtns=document.querySelectorAll('.tab-btn');
-        tabBtns.forEach(btn=>btn.addEventListener('click',()=>{
-            tabBtns.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
-            document.getElementById('tab-hoy').classList.toggle('hidden',btn.dataset.tab!=='hoy');
-            document.getElementById('tab-historico').classList.toggle('hidden',btn.dataset.tab!=='historico');
-            if(btn.dataset.tab==='historico')calcHistorico();
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active');
+            document.getElementById('tab-hoy').classList.toggle('hidden', btn.dataset.tab !== 'hoy');
+            document.getElementById('tab-historico').classList.toggle('hidden', btn.dataset.tab !== 'historico');
+            if (btn.dataset.tab === 'historico') calcHistorico();
         }));
 
-        document.getElementById('toggle-seguridad').addEventListener('click',function(){
-            _seguridadActiva=!_seguridadActiva;
-            this.style.background=_seguridadActiva?'#dc2626':'#334155';
-            this.querySelector('span').style.transform=_seguridadActiva?'translateX(20px)':'translateX(0)';
+        document.getElementById('toggle-seguridad').addEventListener('click', function () {
+            _seguridadActiva = !_seguridadActiva;
+            this.style.background = _seguridadActiva ? '#dc2626' : '#334155';
+            this.querySelector('span').style.transform = _seguridadActiva ? 'translateX(20px)' : 'translateX(0)';
             calcHoy();
         });
 
-        function llenarSelect(id,opciones){const sel=document.getElementById(id);sel.innerHTML=Object.entries(opciones).map(([k,v])=>`<option value="${v}">${k}</option>`).join('');}
+        function llenarSelect(id, opciones) { const sel = document.getElementById(id); sel.innerHTML = Object.entries(opciones).map(([k, v]) => `<option value="${v}">${k}</option>`).join(''); }
 
-        function cargarFactoresMetal(m){
-            const f=FACTORES[m];
-            llenarSelect('calc-ley',f.leyes); llenarSelect('calc-color',f.colores); llenarSelect('calc-merma',f.mermas); llenarSelect('calc-mo',f.mo); llenarSelect('calc-util',f.utilidades);
-            _metalActual=m;
-            if(cache&&cache[SPOT_KEYS[m]]){_spotBase=parseFloat(cache[SPOT_KEYS[m]]);document.getElementById('spot-calc').textContent=_spotBase.toFixed(3);}
+        function cargarFactoresMetal(m) {
+            const f = FACTORES[m];
+            llenarSelect('calc-ley', f.leyes); llenarSelect('calc-color', f.colores); llenarSelect('calc-merma', f.mermas); llenarSelect('calc-mo', f.mo); llenarSelect('calc-util', f.utilidades);
+            _metalActual = m;
+            if (cache && cache[SPOT_KEYS[m]]) { _spotBase = parseFloat(cache[SPOT_KEYS[m]]); document.getElementById('spot-calc').textContent = _spotBase.toFixed(3); }
+            const d = cache;
+            const cfgLey = d[`CFG_LEY_M${m}`]; if (cfgLey) document.getElementById('calc-ley').value = cfgLey;
+            const cfgCol = d[`CFG_COL_M${m}`]; if (cfgCol) document.getElementById('calc-color').value = cfgCol;
+            const cfgMer = d[`CFG_MERMA_M${m}`]; if (cfgMer) document.getElementById('calc-merma').value = cfgMer;
+            const cfgMo = d[`CFG_MO_M${m}`]; if (cfgMo !== undefined && cfgMo !== null) document.getElementById('calc-mo').value = cfgMo;
+            const cfgUtil = d[`CFG_UTIL_M${m}`]; if (cfgUtil) document.getElementById('calc-util').value = cfgUtil;
             calcHoy();
         }
 
-        document.getElementById('calc-metal').addEventListener('change',function(){cargarFactoresMetal(parseInt(this.value));});
+        document.getElementById('calc-metal').addEventListener('change', function () { cargarFactoresMetal(parseInt(this.value)); });
 
-        function calcularPVP(spot){
-            const m=_metalActual; const f=FACTORES[m];
-            const seguridad=_seguridadActiva?0.02:0; const proveedor=PROVEEDOR[m];
-            const ley=parseFloat(document.getElementById('calc-ley').value)||1; const color=parseFloat(document.getElementById('calc-color').value)||1;
-            const merma=parseFloat(document.getElementById('calc-merma').value)||1; const mo=parseFloat(document.getElementById('calc-mo').value)||0;
-            const util=parseFloat(document.getElementById('calc-util').value)||1; const ci=f.cierre;
-            const cf=spot*(1+proveedor+seguridad); const cb=cf*ley; const cl=cb*color; const cp=cl*merma; const cm=cp+mo; const br=cm*util;
-            const inf=Math.floor(br/ci.red)*ci.red; const val=(br-inf<ci.umb)?inf:inf+ci.red;
+        function calcularPVP(spot) {
+            const m = _metalActual; const f = FACTORES[m];
+            const seguridad = _seguridadActiva ? 0.02 : 0; const proveedor = PROVEEDOR[m];
+            const ley = parseFloat(document.getElementById('calc-ley').value) || 1; const color = parseFloat(document.getElementById('calc-color').value) || 1;
+            const merma = parseFloat(document.getElementById('calc-merma').value) || 1; const mo = parseFloat(document.getElementById('calc-mo').value) || 0;
+            const util = parseFloat(document.getElementById('calc-util').value) || 1; const ci = f.cierre;
+            const cf = spot * (1 + proveedor + seguridad); const cb = cf * ley; const cl = cb * color; const cp = cl * merma; const cm = cp + mo; const br = cm * util;
+            const inf = Math.floor(br / ci.red) * ci.red; const val = (br - inf < ci.umb) ? inf : inf + ci.red;
             return Math.round(val);
         }
 
-        function calcHoy(){
-            const m=_metalActual; const f=FACTORES[m];
-            const pvpCalc=calcularPVP(_spotBase); const pvpVig=_pvpActual[m]||pvpCalc;
-            const dif=pvpCalc-pvpVig; const gat=dif>0?f.cierre.gatSube:f.cierre.gatBaja;
-            const pvpFinal=Math.abs(dif)>=gat?pvpCalc:pvpVig;
-            document.getElementById('spot-calc').textContent=_spotBase.toFixed(3);
-            document.getElementById('pvp-gr').textContent=`S/ ${pvpFinal.toFixed(3)}`;
-            [1,2,3].forEach(i=>{const v=parseFloat(document.getElementById(`peso${i}`).value)||0;document.getElementById(`total-p${i}`).textContent=`S/ ${(pvpFinal*v).toFixed(3)}`;});
+        function calcHoy() {
+            const m = _metalActual; const f = FACTORES[m];
+            const pvpCalc = calcularPVP(_spotBase); const pvpVig = _pvpActual[m] || pvpCalc;
+            const dif = pvpCalc - pvpVig; const gat = dif > 0 ? f.cierre.gatSube : f.cierre.gatBaja;
+            const pvpFinal = Math.abs(dif) >= gat ? pvpCalc : pvpVig;
+            document.getElementById('spot-calc').textContent = _spotBase.toFixed(3);
+            document.getElementById('pvp-gr').textContent = `S/ ${pvpFinal.toFixed(3)}`;
+            [1, 2, 3].forEach(i => { const v = parseFloat(document.getElementById(`peso${i}`).value) || 0; document.getElementById(`total-p${i}`).textContent = `S/ ${(pvpFinal * v).toFixed(3)}`; });
         }
 
-        function calcHistorico(){
-            const m=_metalActual; const spotHist=492.100;
-            const pvpHistCalc=calcularPVP(spotHist); const pvpHistVig=_pvpActual[m]||pvpHistCalc;
-            const difHist=pvpHistCalc-pvpHistVig; const f=FACTORES[m];
-            const gatHist=difHist>0?f.cierre.gatSube:f.cierre.gatBaja;
-            const pvpHistFinal=Math.abs(difHist)>=gatHist?pvpHistCalc:pvpHistVig;
-            const pvpHoy=parseFloat(document.getElementById('pvp-gr').textContent.replace('S/ ',''))||_pvpActual[m];
-            const d=pvpHoy-pvpHistFinal; const pct=pvpHistFinal?((d/pvpHistFinal)*100).toFixed(1):'0.0'; const sg=d>=0?'+':'';
-            document.getElementById('spot-hist').textContent=spotHist.toFixed(3);
-            document.getElementById('pvp-gr-hist').textContent=`S/ ${pvpHistFinal.toFixed(3)}`;
-            document.getElementById('pvp-hoy-ref').textContent=`S/ ${pvpHoy.toFixed(3)}`;
-            const de=document.getElementById('diff-pvp'); de.textContent=`${sg}S/ ${d.toFixed(3)} (${sg}${pct}%)`; de.className=`font-bold mono text-xs ${d>0?'trend-up':d<0?'trend-down':'trend-flat'}`;
+        function calcHistorico() {
+            const m = _metalActual; const spotHist = 492.100;
+            const pvpHistCalc = calcularPVP(spotHist); const pvpHistVig = _pvpActual[m] || pvpHistCalc;
+            const difHist = pvpHistCalc - pvpHistVig; const f = FACTORES[m];
+            const gatHist = difHist > 0 ? f.cierre.gatSube : f.cierre.gatBaja;
+            const pvpHistFinal = Math.abs(difHist) >= gatHist ? pvpHistCalc : pvpHistVig;
+            const pvpHoy = parseFloat(document.getElementById('pvp-gr').textContent.replace('S/ ', '')) || _pvpActual[m];
+            const d = pvpHoy - pvpHistFinal; const pct = pvpHistFinal ? ((d / pvpHistFinal) * 100).toFixed(1) : '0.0'; const sg = d >= 0 ? '+' : '';
+            document.getElementById('spot-hist').textContent = spotHist.toFixed(3);
+            document.getElementById('pvp-gr-hist').textContent = `S/ ${pvpHistFinal.toFixed(3)}`;
+            document.getElementById('pvp-hoy-ref').textContent = `S/ ${pvpHoy.toFixed(3)}`;
+            const de = document.getElementById('diff-pvp'); de.textContent = `${sg}S/ ${d.toFixed(3)} (${sg}${pct}%)`; de.className = `font-bold mono text-xs ${d > 0 ? 'trend-up' : d < 0 ? 'trend-down' : 'trend-flat'}`;
         }
 
-        function actualizarCalculadora(){document.getElementById('spot-calc').textContent=_spotBase.toFixed(3);document.getElementById('tc-calc').textContent=_tcVenta.toFixed(3);cargarFactoresMetal(1);}
+        function actualizarCalculadora() { document.getElementById('spot-calc').textContent = _spotBase.toFixed(3); document.getElementById('tc-calc').textContent = _tcVenta.toFixed(3); cargarFactoresMetal(1); }
 
-        ['peso1','peso2','peso3'].forEach(id=>{document.getElementById(id).addEventListener('change',calcHoy);document.getElementById(id).addEventListener('input',calcHoy);});
-        ['calc-ley','calc-color','calc-merma','calc-mo','calc-util'].forEach(id=>{document.getElementById(id).addEventListener('change',calcHoy);});
-        document.getElementById('fecha-historica').addEventListener('change',calcHistorico);
+        ['peso1', 'peso2', 'peso3'].forEach(id => { document.getElementById(id).addEventListener('change', calcHoy); document.getElementById(id).addEventListener('input', calcHoy); });
+        ['calc-ley', 'calc-color', 'calc-merma', 'calc-mo', 'calc-util'].forEach(id => { document.getElementById(id).addEventListener('change', calcHoy); });
+        document.getElementById('fecha-historica').addEventListener('change', calcHistorico);
 
         document.getElementById('btn-actualizar').addEventListener('click', loadData);
 
-        setInterval(()=>{document.getElementById('live-clock').textContent=new Date().toLocaleString('es-PE',{dateStyle:'short',timeStyle:'short'});},1000);
+        setInterval(() => { document.getElementById('live-clock').textContent = new Date().toLocaleString('es-PE', { dateStyle: 'short', timeStyle: 'short' }); }, 1000);
 
         loadData();
     </script>
 </body>
+
 </html>

@@ -320,7 +320,8 @@
                         </div>
                         <div class="border-t border-yellow-500/20 pt-3">
                             <div class="grid grid-cols-[80px_40px_1fr] gap-2 text-sm text-slate-500 mb-1">
-                                <span>Peso</span><span></span><span class="text-right">Total</span></div>
+                                <span>Peso</span><span></span><span class="text-right">Total</span>
+                            </div>
                             <div class="space-y-2">
                                 <div class="grid grid-cols-[80px_40px_1fr] gap-2 items-center"><input type="number"
                                         id="peso1" value="2.0" step="0.1"
@@ -504,6 +505,13 @@
                 _spotBase = parseFloat(cache[SPOT_KEYS[m]]);
                 document.getElementById('spot-calc').textContent = _spotBase.toFixed(3);
             }
+            // Aplicar factores por defecto desde config de Negocio
+            const d = cache;
+            const cfgLey = d[`CFG_LEY_M${m}`]; if (cfgLey) document.getElementById('calc-ley').value = cfgLey;
+            const cfgCol = d[`CFG_COL_M${m}`]; if (cfgCol) document.getElementById('calc-color').value = cfgCol;
+            const cfgMer = d[`CFG_MERMA_M${m}`]; if (cfgMer) document.getElementById('calc-merma').value = cfgMer;
+            const cfgMo = d[`CFG_MO_M${m}`]; if (cfgMo !== undefined && cfgMo !== null) document.getElementById('calc-mo').value = cfgMo;
+            const cfgUtil = d[`CFG_UTIL_M${m}`]; if (cfgUtil) document.getElementById('calc-util').value = cfgUtil;
             calcHoy();
         }
 
