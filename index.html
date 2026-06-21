@@ -4,37 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coloma App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background: #0d1117; font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-        .box { background: #161b22; border: 1px solid #334155; border-radius: 16px; padding: 40px; text-align: center; max-width: 360px; width: 100%; }
-        h1 { color: #fff; font-size: 24px; margin-bottom: 8px; }
-        p { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
-        input { background: #1e293b; border: 1px solid #475569; color: #fff; padding: 12px 16px; border-radius: 8px; font-size: 16px; width: 100%; text-align: center; margin-bottom: 16px; }
-        button { background: #eab308; color: #000; font-weight: bold; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; width: 100%; }
-        .error { color: #f87171; font-size: 12px; margin-top: 8px; display: none; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0d1117;
+        }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Coloma App</h1>
-        <p>Dashboard Spot Metals</p>
-        <input type="password" id="clave" placeholder="Ingresa la clave" autofocus>
-        <button onclick="verificar()">Entrar</button>
-        <div class="error" id="error">Clave incorrecta</div>
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-[#161b22] p-8 rounded-2xl border border-[#30363d] w-full max-w-md">
+            <div class="text-center">
+                <h1 class="text-2xl font-bold text-white mb-1">Coloma App</h1>
+                <p class="text-[#8b949e] text-sm mb-6">Dashboard Spot Metals</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="text-sm text-[#8b949e] block mb-1">Ingresa la clave</label>
+                    <input type="password" id="claveInput" 
+                           class="w-full bg-[#0d1117] border border-[#30363d] rounded-lg px-4 py-2 text-white focus:outline-none focus:border-yellow-500 transition"
+                           placeholder="Clave de acceso">
+                </div>
+                <button id="btnEntrar" 
+                        class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-2 rounded-lg transition">
+                    Entrar
+                </button>
+                <p id="errorMsg" class="text-red-500 text-sm text-center h-5"></p>
+            </div>
+        </div>
     </div>
+
     <script>
-        function verificar() {
-            const clave = document.getElementById('clave').value;
-            if (clave === 'coloma2026') {
-                window.location.href = 'DsbDesk.html';
+        // ⚠️ PROTOTIPO: Clave hardcodeada
+        // TODO: Reemplazar con autenticación real contra Sis_Usuarios
+        const CLAVE_CORRECTA = '2025';
+
+        if (localStorage.getItem('acceso_autorizado') === 'true') {
+            redirigir();
+        }
+
+        document.getElementById('btnEntrar').addEventListener('click', validarClave);
+        document.getElementById('claveInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') validarClave();
+        });
+
+        function validarClave() {
+            const input = document.getElementById('claveInput');
+            const error = document.getElementById('errorMsg');
+            
+            if (input.value === CLAVE_CORRECTA) {
+                localStorage.setItem('acceso_autorizado', 'true');
+                redirigir();
             } else {
-                document.getElementById('error').style.display = 'block';
+                error.textContent = '❌ Clave incorrecta';
+                input.value = '';
+                input.focus();
             }
         }
-        // Enter key
-        document.getElementById('clave').addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') verificar();
-        });
+
+        function redirigir() {
+            const esMovil = window.innerWidth < 768;
+            window.location.href = esMovil ? 'DsbMov.html' : 'DsbDesk.html';
+        }
     </script>
 </body>
 </html>

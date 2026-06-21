@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,85 +21,6 @@
         .drawer { transition: transform 0.3s ease; }
         .drawer.open { transform: translateX(0); }
         .overlay { transition: opacity 0.3s ease; }
-=======
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>if (window.innerWidth < 900) window.location.href = 'DsbMov.html';</script>
-    <title>Joyería — Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-
-        .mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .sidebar-item {
-            transition: all 0.2s ease;
-        }
-
-        .sidebar-item:hover {
-            background: rgba(234, 179, 8, 0.1);
-            color: #eab308;
-        }
-
-        .sidebar-item.active {
-            background: rgba(234, 179, 8, 0.15);
-            color: #eab308;
-            border-left: 3px solid #eab308;
-        }
-
-        .trend-up {
-            color: #4ade80;
-        }
-
-        .trend-down {
-            color: #f87171;
-        }
-
-        .trend-flat {
-            color: #94a3b8;
-        }
-
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 2px;
-        }
-
-        .drawer {
-            transition: transform 0.3s ease;
-        }
-
-        .drawer.open {
-            transform: translateX(0);
-        }
-
-        .overlay {
-            transition: opacity 0.3s ease;
-        }
-
-        .tab-btn.active {
-            background: rgba(234, 179, 8, 0.15);
-            color: #eab308;
-            border-bottom: 2px solid #eab308;
-        }
-
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
         .calc-tab {
             position: fixed;
             right: 0;
@@ -122,7 +42,6 @@
             transition: all 0.2s ease;
             box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
         }
-<<<<<<< HEAD
         .calc-tab:hover { background: #f59e0b; color: #0f172a; border-color: #f59e0b; padding-right: 14px; }
         .negocio-tabla th { text-align: left; padding: 10px 8px; border-bottom: 1px solid #334155; color: #94a3b8; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
         .negocio-tabla td { padding: 10px 8px; border-bottom: 1px solid #1e293b; font-size: 0.9rem; }
@@ -131,64 +50,19 @@
         .pvp-card .diff { font-size: 0.8rem; }
     </style>
 </head>
-=======
-
-        .calc-tab:hover {
-            background: #f59e0b;
-            color: #0f172a;
-            border-color: #f59e0b;
-            padding-right: 14px;
-        }
-
-        .sticky-tabs {
-            position: sticky;
-            top: 64px;
-            z-index: 5;
-            background: #161b22;
-        }
-
-        .api-green {
-            color: #4ade80;
-        }
-
-        .api-yellow {
-            color: #facc15;
-        }
-
-        .api-orange {
-            color: #fb923c;
-        }
-
-        .api-red {
-            color: #ef4444;
-        }
-    </style>
-</head>
-
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
 <body class="bg-[#0d1117] text-slate-200 min-h-screen flex">
 
     <aside class="w-60 bg-[#161b22] border-r border-slate-800 flex flex-col fixed h-full z-10">
         <div class="p-5 border-b border-slate-800">
             <div class="flex items-center gap-3">
-<<<<<<< HEAD
                 <div class="w-9 h-9 bg-yellow-500 rounded-lg flex items-center justify-center text-black font-bold text-base">Au</div>
                 <div>
                     <div class="text-base font-bold text-white"></div>
                     <div class="text-sm text-slate-500"></div>
-=======
-                <div
-                    class="w-9 h-9 bg-yellow-500 rounded-lg flex items-center justify-center text-black font-bold text-base">
-                    Au</div>
-                <div>
-                    <div class="text-base font-bold text-white">Joyería v4.0</div>
-                    <div class="text-sm text-slate-500">Sistema de Gestión</div>
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
                 </div>
             </div>
         </div>
         <nav class="flex-1 p-3 space-y-1 overflow-y-auto text-base">
-<<<<<<< HEAD
             <div class="text-sm uppercase tracking-widest text-slate-600 px-3 py-2 mt-2" id="menu-titulo"></div>
             <a class="sidebar-item active flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer" data-piso="dashboard"><span id="menu-dashboard"></span></a>
             <a class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer" data-piso="presupuestos"><span id="menu-presupuestos"></span></a>
@@ -203,36 +77,12 @@
                 <div>
                     <div class="text-sm font-medium text-white" id="sistema-etiqueta"></div>
                     <div class="text-sm text-slate-500" id="sistema-auto"></div>
-=======
-            <div class="text-sm uppercase tracking-widest text-slate-600 px-3 py-2 mt-2">Módulos</div><a
-                class="sidebar-item active flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer">📊
-                Dashboard</a><a
-                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📋
-                Presupuestos</a><a
-                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📦
-                Inventario</a><a
-                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">🛒
-                Compras</a><a
-                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">📊
-                Reportes</a><a
-                class="sidebar-item flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 cursor-pointer">⚙️
-                Configuración</a>
-        </nav>
-        <div class="p-4 border-t border-slate-800">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-slate-700 rounded-full flex items-center justify-center text-sm font-bold">AU
-                </div>
-                <div>
-                    <div class="text-sm font-medium text-white">Sistema</div>
-                    <div class="text-sm text-slate-500">Automático</div>
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
                 </div>
             </div>
         </div>
     </aside>
 
     <main class="ml-60 flex-1 flex flex-col min-h-screen">
-<<<<<<< HEAD
         <header class="bg-[#161b22] border-b border-slate-800 px-6 py-3 flex items-center justify-between sticky top-0 z-10">
             <div>
                 <h1 class="text-xl font-bold text-white" id="page-title"></h1>
@@ -246,28 +96,11 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span class="text-slate-400 text-sm" id="fuente-header">---</span>
                 <button id="btn-actualizar" class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg flex items-center gap-2 transition text-sm"></button>
-=======
-        <header
-            class="bg-[#161b22] border-b border-slate-800 px-6 py-3 flex items-center justify-between sticky top-0 z-10">
-            <div>
-                <h1 class="text-xl font-bold text-white">Dashboard</h1>
-                <p class="text-sm text-slate-500">Resumen de precios y PVP por gramo</p>
-            </div>
-            <div class="flex items-center gap-4 text-base">
-                <div class="text-right">
-                    <div class="text-sm text-slate-500">Última actualización</div>
-                    <div class="font-medium text-slate-300 mono" id="last-update">Cargando...</div>
-                </div><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span><span
-                    class="text-slate-400" id="fuente-header">Cargando...</span><button id="btn-actualizar"
-                    class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg flex items-center gap-2 transition text-base">↻
-                    Actualizar</button>
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
             </div>
         </header>
 
         <div class="p-6 space-y-6 flex-1">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-<<<<<<< HEAD
                 <div class="bg-[#161b22] border border-slate-800 rounded-xl p-4">
                     <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3" id="divisas-titulo"></div>
                     <div class="space-y-3">
@@ -293,54 +126,10 @@
                                 <span class="text-xs mono" id="tc-cpra-dif">---</span>
                                 <span class="text-lg font-bold text-white mono ml-1" id="tc-cpra-val">---</span>
                                 <span class="text-sm ml-1" id="tc-cpra-ico">---</span>
-=======
-                <div class="lg:col-span-1 space-y-4">
-                    <div class="bg-[#161b22] border border-slate-800 rounded-xl p-4">
-                        <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Divisas</div>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center"><span class="text-base text-slate-400"
-                                    id="lbl-tc-ref">Promedio</span>
-                                <div class="text-right"><span class="text-xs mono" id="tc-ref-dif">—</span><span
-                                        class="text-lg font-bold text-white mono ml-1" id="tc-ref-val">—</span><span
-                                        class="text-sm ml-1" id="tc-ref-ico">—</span></div>
-                            </div>
-                            <div class="flex justify-between items-center"><span class="text-base text-slate-400"
-                                    id="lbl-tc-vta">Venta</span>
-                                <div class="text-right"><span class="text-xs mono" id="tc-vta-dif">—</span><span
-                                        class="text-lg font-bold text-white mono ml-1" id="tc-vta-val">—</span><span
-                                        class="text-sm ml-1" id="tc-vta-ico">—</span></div>
-                            </div>
-                            <div class="flex justify-between items-center"><span class="text-base text-slate-400"
-                                    id="lbl-tc-cpra">Compra</span>
-                                <div class="text-right"><span class="text-xs mono" id="tc-cpra-dif">—</span><span
-                                        class="text-lg font-bold text-white mono ml-1" id="tc-cpra-val">—</span><span
-                                        class="text-sm ml-1" id="tc-cpra-ico">—</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-[#161b22] border border-yellow-500/30 rounded-xl p-4">
-                        <div class="text-sm font-semibold text-yellow-500 uppercase tracking-wider mb-3">PVP Actual
-                        </div>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="text-sm text-slate-400 mb-1">Oro 18K gr.</div>
-                                <div class="flex justify-between items-baseline"><span
-                                        class="text-3xl font-bold text-yellow-400 mono" id="pvp-oro-val">—</span><span
-                                        class="text-sm" id="pvp-oro-dif">—</span></div>
-                                <div class="text-xs text-slate-500 mt-1" id="pvp-oro-ts">—</div>
-                            </div>
-                            <div class="pt-3 border-t border-slate-800">
-                                <div class="text-sm text-slate-400 mb-1">Plata 950 gr.</div>
-                                <div class="flex justify-between items-baseline"><span
-                                        class="text-3xl font-bold text-slate-300 mono" id="pvp-plata-val">—</span><span
-                                        class="text-sm" id="pvp-plata-dif">—</span></div>
-                                <div class="text-xs text-slate-500 mt-1" id="pvp-plata-ts">—</div>
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
                             </div>
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
 
                 <div class="bg-[#161b22] border border-yellow-500/30 rounded-xl p-4">
                     <div class="text-sm font-semibold text-yellow-500 uppercase tracking-wider mb-3" id="pvp-titulo"></div>
@@ -385,33 +174,10 @@
 
         <footer class="border-t border-slate-800 px-6 py-3 flex items-center justify-between text-sm text-slate-600">
             <span id="footer-info"></span>
-=======
-                <div class="lg:col-span-2">
-                    <div class="bg-[#161b22] border border-slate-800 rounded-xl p-4 h-full">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Mercado — Spots
-                                de Bolsa</div><span class="text-xs text-slate-600 mono bg-slate-800 px-2 py-0.5 rounded"
-                                id="market-ts">Cargando...</span>
-                        </div>
-                        <div class="grid grid-cols-2 gap-4" id="mercado-container"></div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-base font-semibold text-slate-400 uppercase tracking-wider mb-3">Negocio — Spot con
-                    Factores + PVP</h2>
-                <div class="bg-[#161b22] border border-slate-800 rounded-xl overflow-x-auto" id="negocio-container">
-                </div>
-            </div>
-        </div>
-        <footer class="border-t border-slate-800 px-6 py-3 flex items-center justify-between text-sm text-slate-600">
-            <span>ⓘ TC: 30 min | Metales: 9am, 12pm, 4pm | API: <span id="api-count" class="font-medium">—</span></span>
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
             <span class="mono" id="live-clock"></span>
         </footer>
     </main>
 
-<<<<<<< HEAD
     <div id="calc-tab" class="calc-tab" onclick="openCalc()"></div>
     <div id="overlay" class="overlay fixed inset-0 bg-black/60 z-20 hidden" onclick="closeCalc()"></div>
     <div id="drawer" class="drawer fixed right-0 top-0 h-full w-full max-w-md bg-[#161b22] border-l border-slate-800 z-30 transform translate-x-full shadow-2xl overflow-y-auto">
@@ -573,220 +339,11 @@
             }
 
             document.getElementById('footer-info').innerHTML = s(d.WEB_DS_FOOTER_INFO) + ' <span id="api-count" class="font-medium">' + s(d.WEB_UI_MC_CT_API) + '</span>';
-=======
-    <div id="calc-tab" class="calc-tab" onclick="openCalc()">CALC</div>
-    <div id="overlay" class="overlay fixed inset-0 bg-black/60 z-20 hidden" onclick="closeCalc()"></div>
-
-    <div id="drawer"
-        class="drawer fixed right-0 top-0 h-full w-full max-w-md bg-[#161b22] border-l border-slate-800 z-30 transform translate-x-full shadow-2xl overflow-y-auto">
-        <div
-            class="sticky top-0 bg-[#161b22] border-b border-slate-800 px-5 py-4 flex items-center justify-between z-10">
-            <h2 class="text-lg font-bold text-white">🧮 Calculadora</h2><button
-                class="text-slate-400 hover:text-white text-xl" onclick="closeCalc()">✕</button>
-        </div>
-        <div class="sticky-tabs flex border-b border-slate-800"><button
-                class="tab-btn active flex-1 py-3 text-base font-semibold text-slate-400"
-                data-tab="hoy">HOY</button><button class="tab-btn flex-1 py-3 text-base font-semibold text-slate-400"
-                data-tab="historico">HISTÓRICO</button></div>
-        <div class="p-5 space-y-4">
-            <div id="tab-hoy" class="space-y-4">
-                <div><label class="text-sm text-slate-400 block mb-1">Metal</label><select id="calc-metal"
-                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white">
-                        <option value="1">Oro (Au)</option>
-                        <option value="2">Plata (Ag)</option>
-                        <option value="3">Platino (Pt)</option>
-                        <option value="4">Paladio (Pd)</option>
-                    </select></div>
-                <div><label class="text-sm text-slate-400 block mb-1">Ley</label><select id="calc-ley"
-                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white"></select>
-                </div>
-                <div><label class="text-sm text-slate-400 block mb-1">Color</label><select id="calc-color"
-                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white"></select>
-                </div>
-                <div><label class="text-sm text-slate-400 block mb-1">Merma</label><select id="calc-merma"
-                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white"></select>
-                </div>
-                <div><label class="text-sm text-slate-400 block mb-1">Mano de obra (S/ / gr)</label><select id="calc-mo"
-                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white"></select>
-                </div>
-                <div><label class="text-sm text-slate-400 block mb-1">Utilidad</label><select id="calc-util"
-                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white"></select>
-                </div>
-                <div class="bg-red-900/20 border border-red-500/30 rounded-lg p-4 flex items-center justify-between">
-                    <div>
-                        <div class="text-base font-semibold text-red-400">🛡️ Factor de seguridad</div>
-                        <div class="text-sm text-slate-400">+2% sobre costo</div>
-                    </div><button id="toggle-seguridad"
-                        class="w-12 h-7 bg-slate-700 rounded-full relative transition"><span
-                            class="absolute top-0.5 left-0.5 w-6 h-6 bg-white rounded-full shadow transition"></span></button>
-                </div>
-                <div class="bg-slate-900/50 rounded-lg p-3 text-sm space-y-1">
-                    <div class="flex justify-between"><span class="text-slate-400">Spot 24K gr (S/)</span><span
-                            class="text-white mono font-bold" id="spot-calc">—</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">TC Venta</span><span
-                            class="text-white mono font-bold" id="tc-calc">—</span></div>
-                </div>
-                <div class="sticky bottom-0 bg-[#161b22] pt-3 pb-1 z-10">
-                    <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 space-y-3">
-                        <div class="flex justify-between items-center"><span class="text-base text-slate-300">PVP /
-                                gr</span><span class="text-xl font-bold text-yellow-400 mono" id="pvp-gr">S/ —</span>
-                        </div>
-                        <div class="border-t border-yellow-500/20 pt-3">
-                            <div class="grid grid-cols-[80px_40px_1fr] gap-2 text-sm text-slate-500 mb-1">
-                                <span>Peso</span><span></span><span class="text-right">Total</span>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="grid grid-cols-[80px_40px_1fr] gap-2 items-center"><input type="number"
-                                        id="peso1" value="2.0" step="0.1"
-                                        class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-base text-white text-center w-full"><span
-                                        class="text-sm text-slate-400">gr</span><span
-                                        class="text-base font-bold text-white mono text-right" id="total-p1">S/ —</span>
-                                </div>
-                                <div class="grid grid-cols-[80px_40px_1fr] gap-2 items-center"><input type="number"
-                                        id="peso2" value="5.0" step="0.1"
-                                        class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-base text-white text-center w-full"><span
-                                        class="text-sm text-slate-400">gr</span><span
-                                        class="text-base font-bold text-white mono text-right" id="total-p2">S/ —</span>
-                                </div>
-                                <div class="grid grid-cols-[80px_40px_1fr] gap-2 items-center"><input type="number"
-                                        id="peso3" value="10.0" step="0.1"
-                                        class="bg-slate-800 border border-slate-700 rounded px-2 py-1 text-base text-white text-center w-full"><span
-                                        class="text-sm text-slate-400">gr</span><span
-                                        class="text-base font-bold text-white mono text-right" id="total-p3">S/ —</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="tab-historico" class="space-y-4 hidden">
-                <div class="bg-slate-900/30 rounded-lg p-4 text-sm text-slate-400">
-                    <p>Usa los mismos factores del panel HOY.<br>Solo elige la fecha para comparar.</p>
-                </div>
-                <div><label class="text-sm text-slate-400 block mb-1">Fecha de consulta</label><input type="date"
-                        id="fecha-historica" value="2026-02-14"
-                        class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-base text-white">
-                </div>
-                <div class="bg-slate-900/50 rounded-lg p-4 space-y-2">
-                    <div class="flex justify-between"><span class="text-slate-400">Spot ese día (gr S/)</span><span
-                            class="text-white mono font-bold text-lg" id="spot-hist">—</span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">TC ese día</span><span
-                            class="text-white mono font-bold" id="tc-hist">—</span></div>
-                </div>
-                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 space-y-3">
-                    <div class="flex justify-between"><span class="text-base text-slate-300">PVP ese día</span><span
-                            class="text-xl font-bold text-yellow-400 mono" id="pvp-gr-hist">S/ —</span></div>
-                    <div class="border-t border-yellow-500/20 pt-3 space-y-2">
-                        <div class="flex justify-between"><span class="text-sm text-slate-400">PVP HOY</span><span
-                                class="text-base font-bold text-white mono" id="pvp-hoy-ref">S/ —</span></div>
-                        <div class="flex justify-between"><span class="text-sm text-slate-400">Diferencia</span><span
-                                class="text-base font-bold mono" id="diff-pvp">—</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz0VanGP07v1qh87K03FR77gAzhjeTM2DBkkZ8ONIXwxJ4Elucy-eF9tgZ2R5L0-Kl9uw/exec";
-        let cache = {};
-        let _spotBase = 492.921;
-        let _tcVenta = 3.416;
-        let _seguridadActiva = false;
-        let _metalActual = 1;
-        let _pvpActual = { 1: 605, 2: 28, 3: 0, 4: 0 };
-
-        const SPOT_KEYS = { 1: 'UI_MC_M1_GR_VAL_LOC', 2: 'UI_MC_M2_GR_VAL_LOC', 3: 'UI_MC_M3_GR_VAL_LOC', 4: 'UI_MC_M4_GR_VAL_LOC' };
-        const PROVEEDOR = { 1: 0.005, 2: 0, 3: 0.005, 4: 0.005 };
-        const FACTORES = {
-            1: { nombre: 'Oro', leyes: { '24K': 1, '22K': 0.916, '21K': 0.875, '18K': 0.75, '16K': 0.666, '14K': 0.585 }, colores: { 'Rojo': 1, 'Rosa': 1, 'Amarillo': 1.05, 'Blanco': 1.12 }, mermas: { 'Estándar 10%': 1.10, 'Detallado 15%': 1.15, 'Especial 18%': 1.18 }, mo: { 'Estándar S/35': 35, 'Técnica S/55': 55, 'Maestra S/90': 90 }, utilidades: { 'Por Peso +20g': 1.20, 'Por Cantidad': 1.25, 'Básica 30%': 1.30, 'Estándar 35%': 1.35, 'Exclusiva 40%': 1.40 }, cierre: { red: 5, umb: 2.5, gatSube: 3, gatBaja: 15 } },
-            2: { nombre: 'Plata', leyes: { '999 Fina': 1, '950': 0.95, '925': 0.925, '800': 0.80 }, colores: { 'Plata': 1 }, mermas: { 'Sin merma': 1 }, mo: { 'Sin MO': 0 }, utilidades: { 'Volumen 150%': 2.50, 'Estándar 240%': 3.40, 'Exclusiva 320%': 4.20 }, cierre: { red: 2, umb: 0.5, gatSube: 0.5, gatBaja: 3 } },
-            3: { nombre: 'Platino', leyes: { '999 Fino': 1, '950': 0.95, '900': 0.90 }, colores: { 'Platino': 1 }, mermas: { 'Detallado 15%': 1.15, 'Especial 20%': 1.20 }, mo: { 'Sin MO': 0, 'Estándar S/35': 35, 'Técnica S/80': 80, 'Maestra S/120': 120 }, utilidades: { 'Estándar 35%': 1.35, 'Exclusiva 40%': 1.40 }, cierre: { red: 10, umb: 5, gatSube: 5, gatBaja: 15 } },
-            4: { nombre: 'Paladio', leyes: { '999 Fino': 1, '950': 0.95 }, colores: { 'Paladio': 1 }, mermas: { 'Detallado 15%': 1.15, 'Especial 20%': 1.20 }, mo: { 'Sin MO': 0, 'Estándar S/35': 35, 'Técnica S/80': 80, 'Maestra S/120': 120 }, utilidades: { 'Estándar 35%': 1.35, 'Exclusiva 40%': 1.40 }, cierre: { red: 10, umb: 5, gatSube: 5, gatBaja: 15 } }
-        };
-
-        async function loadData() {
-            const btn = document.getElementById('btn-actualizar');
-            btn.disabled = true;
-            btn.innerHTML = '⟳ Cargando...';
-            try {
-                const r = await fetch(WEB_APP_URL);
-                const j = await r.json();
-                if (!j.success) throw new Error(j.error);
-                cache = j.data;
-                renderAll();
-            } catch (e) {
-                console.error(e);
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = '↻ Actualizar';
-            }
-        }
-
-        function fmt(v, d = 3) { const n = parseFloat(v); return isNaN(n) ? null : n.toFixed(d); }
-        function fmtS(v) { const f = fmt(v); return f !== null ? `S/ ${f}` : null; }
-        function icoCls(v) { if (v === '▲') return 'trend-up'; if (v === '▼') return 'trend-down'; return 'trend-flat'; }
-        function difCls(v) { const n = parseFloat(v); if (isNaN(n)) return 'trend-flat'; if (n > 0) return 'trend-up'; if (n < 0) return 'trend-down'; return 'trend-flat'; }
-
-        function renderAll() {
-            const d = cache;
-            document.getElementById('last-update').textContent = d.UI_TC_TS_ALL || '—';
-            document.getElementById('fuente-header').textContent = d.UI_SIS_FUENTE_ACT || '—';
-            ['REF', 'VTA', 'CPRA'].forEach(k => {
-                const etq = d[`UI_TC_${k}_ETQ`] || '';
-                const val = d[`UI_TC_${k}_VAL_${k === 'REF' ? 'API' : 'LOC'}`];
-                const dif = d[`UI_TC_${k}_DIF`]; const ico = d[`UI_TC_${k}_ICO`] || '';
-                const id = k === 'REF' ? 'ref' : k === 'VTA' ? 'vta' : 'cpra';
-                document.getElementById(`lbl-tc-${id}`).textContent = etq || (k === 'REF' ? 'Promedio' : k === 'VTA' ? 'Venta' : 'Compra');
-                document.getElementById(`tc-${id}-val`).textContent = fmtS(val) || '—';
-                const difEl = document.getElementById(`tc-${id}-dif`);
-                difEl.textContent = dif != null ? (parseFloat(dif) >= 0 ? '+' : '') + parseFloat(dif).toFixed(3) : '—';
-                difEl.className = `text-xs mono ${difCls(dif)}`;
-                const icoEl = document.getElementById(`tc-${id}-ico`); icoEl.textContent = ico; icoEl.className = `text-sm ml-1 ${icoCls(ico)}`;
-            });
-            _pvpActual[1] = parseFloat(d.UI_NG_PM_M1_PVP_VAL || d.UI_NG_MD_M1_PVP_VAL || d.UI_NG_AM_M1_PVP_VAL || d.UI_NG_CIE_M1_PVP_VAL) || 605;
-            _pvpActual[2] = parseFloat(d.UI_NG_PM_M2_PVP_VAL || d.UI_NG_MD_M2_PVP_VAL || d.UI_NG_AM_M2_PVP_VAL || d.UI_NG_CIE_M2_PVP_VAL) || 28;
-            document.getElementById('pvp-oro-val').textContent = fmtS(_pvpActual[1]) || '—';
-            document.getElementById('pvp-plata-val').textContent = fmtS(_pvpActual[2]) || '—';
-            document.getElementById('pvp-oro-ts').textContent = d.UI_NG_PM_TS || d.UI_NG_MD_TS || '—';
-            document.getElementById('pvp-plata-ts').textContent = d.UI_NG_PM_TS || d.UI_NG_MD_TS || '—';
-            const metales = [1, 2, 3, 4];
-            const nombres = { 1: 'Oro', 2: 'Plata', 3: 'Platino', 4: 'Paladio' };
-            const emojis = { 1: '🪙', 2: '🔘', 3: '💍', 4: '🔩' };
-            const borders = { 1: 'border-amber-500/20', 2: 'border-slate-500/20', 3: 'border-sky-500/20', 4: 'border-teal-500/20' };
-            const colors = { 1: 'text-amber-400', 2: 'text-slate-300', 3: 'text-sky-400', 4: 'text-teal-400' };
-            document.getElementById('market-ts').textContent = d.UI_MC_TS_API || '—';
-            document.getElementById('mercado-container').innerHTML = metales.map(m => {
-                const tagGr = d[`UI_MC_M${m}_TAG_GR`] || 'Gramo', tagOz = d[`UI_MC_M${m}_TAG_OZ`] || 'Onza';
-                const ico = d[`UI_MC_M${m}_GR_ICO`] || '';
-                const grLoc = fmtS(d[`UI_MC_M${m}_GR_VAL_LOC`]), grApi = fmt(d[`UI_MC_M${m}_GR_VAL_API`]);
-                const grDifLoc = d[`UI_MC_M${m}_GR_DIF_LOC`] != null ? parseFloat(d[`UI_MC_M${m}_GR_DIF_LOC`]).toFixed(3) : null;
-                const grDifApi = d[`UI_MC_M${m}_GR_DIF_API`] != null ? parseFloat(d[`UI_MC_M${m}_GR_DIF_API`]).toFixed(3) : null;
-                const ozLoc = fmtS(d[`UI_MC_M${m}_OZ_VAL_LOC`]), ozApi = fmt(d[`UI_MC_M${m}_OZ_VAL_API`]);
-                const ozDifLoc = d[`UI_MC_M${m}_OZ_DIF_LOC`] != null ? parseFloat(d[`UI_MC_M${m}_OZ_DIF_LOC`]).toFixed(3) : null;
-                const ozDifApi = d[`UI_MC_M${m}_OZ_DIF_API`] != null ? parseFloat(d[`UI_MC_M${m}_OZ_DIF_API`]).toFixed(3) : null;
-                return `<div class="bg-slate-900/30 border ${borders[m]} rounded-lg p-4"><div class="flex items-center gap-2 mb-3"><span class="text-xl">${emojis[m]}</span><span class="font-bold ${colors[m]} text-base">${nombres[m]}</span><span class="text-base ${icoCls(ico)}">${ico}</span></div><div class="space-y-0"><div class="flex gap-3 pb-3"><div class="flex items-center"><span class="[writing-mode:vertical-lr] rotate-180 text-[11px] uppercase tracking-widest text-slate-400 font-bold">${tagGr}</span></div><div class="flex-1 flex justify-between items-end"><div><div class="text-xs mono ${difCls(grDifLoc)}">${grDifLoc || '0.000'}</div><div class="text-xl font-bold text-white mono">${grLoc || '—'}</div></div><div class="text-right"><div class="text-xs mono ${difCls(grDifApi)}">${grDifApi || '0.000'}</div><div class="text-sm text-slate-400 mono">${grApi ? '$' + grApi : '—'}</div></div></div></div><div class="border-t border-slate-700/50"></div><div class="flex gap-3 pt-3"><div class="flex items-center"><span class="[writing-mode:vertical-lr] rotate-180 text-[11px] uppercase tracking-widest text-slate-400 font-bold">${tagOz}</span></div><div class="flex-1 flex justify-between items-end"><div><div class="text-xs mono ${difCls(ozDifLoc)}">${ozDifLoc || '0.000'}</div><div class="text-lg font-medium text-slate-300 mono">${ozLoc || '—'}</div></div><div class="text-right"><div class="text-xs mono ${difCls(ozDifApi)}">${ozDifApi || '0.000'}</div><div class="text-sm text-slate-400 mono">${ozApi ? '$' + ozApi : '—'}</div></div></div></div></div></div>`;
-            }).join('');
-            const boxes = ['CIE', 'AM', 'MD', 'PM'];
-            const filas = [{ key: 'M1_L1', lbl: d.UI_NG_TAG_M1_L1 || 'Oro 24K gr.' }, { key: 'M1_L2', lbl: d.UI_NG_TAG_M1_L2 || 'Oro 18K gr.' }, { key: 'M2_L1', lbl: d.UI_NG_TAG_M2_L1 || 'Plata 950 gr.' }, { key: 'M1_PVP', lbl: d.UI_NG_TAG_M1_PVP || 'PVP Oro 18K gr.', pvp: true }, { key: 'M2_PVP', lbl: d.UI_NG_TAG_M2_PVP || 'PVP Plata 950 gr.', pvp: true }];
-            document.getElementById('negocio-container').innerHTML = `<table class="w-full text-base"><thead><tr class="bg-slate-900/50 border-b border-slate-800 text-sm uppercase tracking-wider text-slate-500"><th class="px-5 py-3 text-left" style="width:40%"><div>${d.UI_NG_ETQ_TIT || 'Metal / Aleación'}</div></th>${boxes.map(b => `<th class="px-5 py-3 text-right border-r border-slate-800/50" style="width:15%"><div>${d[`UI_NG_${b}_ETQ`] || b}</div><div class="text-[10px] normal-case text-slate-600 mt-0.5">${d[`UI_NG_${b}_TS`] || '—'}</div></th>`).join('')}</tr></thead><tbody class="divide-y divide-slate-800/50">${filas.map(f => `<tr class="hover:bg-slate-800/20 ${f.pvp ? 'bg-yellow-500/5' : ''}"><td class="px-5 py-4 font-semibold ${f.pvp ? 'text-slate-300' : 'text-slate-200'}">${f.lbl}</td>${boxes.map(b => { const v = d[`UI_NG_${b}_${f.key}_VAL`], df = d[`UI_NG_${b}_${f.key}_DIF`]; const color = f.pvp ? (f.key.includes('M1') ? 'text-amber-400' : 'text-slate-300') : 'text-white'; const difSigno = df != null && parseFloat(df) >= 0 ? '+' : ''; return `<td class="px-5 py-4 text-right mono ${color} tabular-nums whitespace-nowrap border-r border-slate-800/50">${fmtS(v) || '—'} <span class="${difCls(df)} text-xs">${df != null ? difSigno + parseFloat(df).toFixed(3) : '—'}</span></td>`; }).join('')}</tr>`).join('')}</tbody></table>`;
-            const api = d.UI_MC_CT_API; const apiEl = document.getElementById('api-count'); apiEl.textContent = api || '—'; apiEl.className = 'font-medium';
-            if (api <= 40) apiEl.classList.add('api-green');
-            else if (api <= 70) apiEl.classList.add('api-yellow');
-            else if (api <= 90) apiEl.classList.add('api-orange');
-            else apiEl.classList.add('api-red');
-
-            _spotBase = parseFloat(d.UI_MC_M1_GR_VAL_LOC) || 492.921;
-            _tcVenta = parseFloat(d.UI_TC_VTA_VAL_LOC) || 3.416;
-            document.getElementById('tc-calc').textContent = _tcVenta.toFixed(3);
-            actualizarCalculadora();
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
         }
 
         function openCalc() { document.getElementById('drawer').classList.add('open'); document.getElementById('overlay').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
         function closeCalc() { document.getElementById('drawer').classList.remove('open'); document.getElementById('overlay').classList.add('hidden'); document.body.style.overflow = ''; }
 
-<<<<<<< HEAD
         function actualizarReloj() {
             document.getElementById('live-clock').textContent = new Date().toLocaleString('es-PE', { dateStyle: 'short', timeStyle: 'medium' });
         }
@@ -800,140 +357,4 @@
         });
     </script>
 </body>
-=======
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        tabBtns.forEach(btn => btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById('tab-hoy').classList.toggle('hidden', btn.dataset.tab !== 'hoy');
-            document.getElementById('tab-historico').classList.toggle('hidden', btn.dataset.tab !== 'historico');
-            if (btn.dataset.tab === 'historico') calcHistorico();
-        }));
-
-        document.getElementById('toggle-seguridad').addEventListener('click', function () {
-            _seguridadActiva = !_seguridadActiva;
-            this.style.background = _seguridadActiva ? '#dc2626' : '#334155';
-            this.querySelector('span').style.transform = _seguridadActiva ? 'translateX(20px)' : 'translateX(0)';
-            calcHoy();
-        });
-
-        function llenarSelect(id, opciones) {
-            const sel = document.getElementById(id);
-            sel.innerHTML = Object.entries(opciones).map(([k, v]) => `<option value="${v}">${k}</option>`).join('');
-        }
-
-        function cargarFactoresMetal(m) {
-            const f = FACTORES[m];
-            llenarSelect('calc-ley', f.leyes);
-            llenarSelect('calc-color', f.colores);
-            llenarSelect('calc-merma', f.mermas);
-            llenarSelect('calc-mo', f.mo);
-            llenarSelect('calc-util', f.utilidades);
-            _metalActual = m;
-            if (cache && cache[SPOT_KEYS[m]]) {
-                _spotBase = parseFloat(cache[SPOT_KEYS[m]]);
-                document.getElementById('spot-calc').textContent = _spotBase.toFixed(3);
-            }
-            // Aplicar factores por defecto desde config de Negocio
-            const d = cache;
-            const cfgLey = d[`CFG_LEY_M${m}`]; if (cfgLey) document.getElementById('calc-ley').value = cfgLey;
-            const cfgCol = d[`CFG_COL_M${m}`]; if (cfgCol) document.getElementById('calc-color').value = cfgCol;
-            const cfgMer = d[`CFG_MERMA_M${m}`]; if (cfgMer) document.getElementById('calc-merma').value = cfgMer;
-            const cfgMo = d[`CFG_MO_M${m}`]; if (cfgMo !== undefined && cfgMo !== null) document.getElementById('calc-mo').value = cfgMo;
-            const cfgUtil = d[`CFG_UTIL_M${m}`]; if (cfgUtil) document.getElementById('calc-util').value = cfgUtil;
-            calcHoy();
-        }
-
-        document.getElementById('calc-metal').addEventListener('change', function () {
-            cargarFactoresMetal(parseInt(this.value));
-        });
-
-        function calcularPVP(spot) {
-            const m = _metalActual;
-            const f = FACTORES[m];
-            const seguridad = _seguridadActiva ? 0.02 : 0;
-            const proveedor = PROVEEDOR[m];
-            const ley = parseFloat(document.getElementById('calc-ley').value) || 1;
-            const color = parseFloat(document.getElementById('calc-color').value) || 1;
-            const merma = parseFloat(document.getElementById('calc-merma').value) || 1;
-            const mo = parseFloat(document.getElementById('calc-mo').value) || 0;
-            const util = parseFloat(document.getElementById('calc-util').value) || 1;
-            const ci = f.cierre;
-            const costoFino = spot * (1 + proveedor + seguridad);
-            const costoBase = costoFino * ley;
-            const costoLigado = costoBase * color;
-            const costoPreparado = costoLigado * merma;
-            const costoConMO = costoPreparado + mo;
-            const bruto = costoConMO * util;
-            const inferior = Math.floor(bruto / ci.red) * ci.red;
-            const valor = (bruto - inferior < ci.umb) ? inferior : inferior + ci.red;
-            return Math.round(valor);
-        }
-
-        function calcHoy() {
-            const m = _metalActual;
-            const f = FACTORES[m];
-            const pvpCalculado = calcularPVP(_spotBase);
-            const pvpVigente = _pvpActual[m] || pvpCalculado;
-            const dif = pvpCalculado - pvpVigente;
-            const gatillo = dif > 0 ? f.cierre.gatSube : f.cierre.gatBaja;
-            const pvpFinal = Math.abs(dif) >= gatillo ? pvpCalculado : pvpVigente;
-
-            document.getElementById('spot-calc').textContent = _spotBase.toFixed(3);
-            document.getElementById('pvp-gr').textContent = `S/ ${pvpFinal.toFixed(3)}`;
-            [1, 2, 3].forEach(i => {
-                const v = parseFloat(document.getElementById(`peso${i}`).value) || 0;
-                document.getElementById(`total-p${i}`).textContent = `S/ ${(pvpFinal * v).toFixed(3)}`;
-            });
-        }
-
-        function calcHistorico() {
-            const m = _metalActual;
-            const spotHist = 492.100;
-            const pvpHistCalculado = calcularPVP(spotHist);
-            const pvpHistVigente = _pvpActual[m] || pvpHistCalculado;
-            const difHist = pvpHistCalculado - pvpHistVigente;
-            const f = FACTORES[m];
-            const gatilloHist = difHist > 0 ? f.cierre.gatSube : f.cierre.gatBaja;
-            const pvpHistFinal = Math.abs(difHist) >= gatilloHist ? pvpHistCalculado : pvpHistVigente;
-
-            const pvpHoy = parseFloat(document.getElementById('pvp-gr').textContent.replace('S/ ', '')) || _pvpActual[m];
-            const d = pvpHoy - pvpHistFinal;
-            const pct = pvpHistFinal ? ((d / pvpHistFinal) * 100).toFixed(1) : '0.0';
-            const sg = d >= 0 ? '+' : '';
-
-            document.getElementById('spot-hist').textContent = spotHist.toFixed(3);
-            document.getElementById('pvp-gr-hist').textContent = `S/ ${pvpHistFinal.toFixed(3)}`;
-            document.getElementById('pvp-hoy-ref').textContent = `S/ ${pvpHoy.toFixed(3)}`;
-            const de = document.getElementById('diff-pvp');
-            de.textContent = `${sg}S/ ${d.toFixed(3)} (${sg}${pct}%)`;
-            de.className = `text-base font-bold mono ${d > 0 ? 'trend-up' : d < 0 ? 'trend-down' : 'trend-flat'}`;
-        }
-
-        function actualizarCalculadora() {
-            document.getElementById('spot-calc').textContent = _spotBase.toFixed(3);
-            document.getElementById('tc-calc').textContent = _tcVenta.toFixed(3);
-            cargarFactoresMetal(1);
-        }
-
-        ['peso1', 'peso2', 'peso3'].forEach(id => {
-            document.getElementById(id).addEventListener('change', calcHoy);
-            document.getElementById(id).addEventListener('input', calcHoy);
-        });
-        ['calc-ley', 'calc-color', 'calc-merma', 'calc-mo', 'calc-util'].forEach(id => {
-            document.getElementById(id).addEventListener('change', calcHoy);
-        });
-        document.getElementById('fecha-historica').addEventListener('change', calcHistorico);
-
-        document.getElementById('btn-actualizar').addEventListener('click', loadData);
-
-        setInterval(() => {
-            document.getElementById('live-clock').textContent = new Date().toLocaleString('es-PE', { dateStyle: 'short', timeStyle: 'medium' });
-        }, 1000);
-
-        loadData();
-    </script>
-</body>
-
->>>>>>> 0334ee0b256a4fe503cd360d94755ea0c03ca6fa
 </html>
