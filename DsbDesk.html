@@ -209,6 +209,9 @@
         }
 
         function renderizar(d) {
+            console.log('Datos recibidos:', d);
+            console.log('Tipo de datos:', typeof d);
+
             const s = (v) => v || '---';
             document.getElementById('page-title').textContent = s(d.WEB_DS_MENU_DASHBOARD);
             document.getElementById('page-subtitle').textContent = s(d.WEB_DS_HEADER_SUBTITULO);
