@@ -48,6 +48,12 @@
         .pvp-card .price { font-size: 2rem; font-weight: 700; }
         .pvp-card .timestamp { font-size: 0.75rem; color: #94a3b8; }
         .pvp-card .diff { font-size: 0.8rem; }
+        .diff-up { color: #4ade80; }
+        .diff-down { color: #f87171; }
+        .diff-flat { color: #94a3b8; }
+        .metal-ico-up { color: #4ade80; }
+        .metal-ico-down { color: #f87171; }
+        .metal-ico-flat { color: #94a3b8; }
     </style>
 </head>
 <body class="bg-[#0d1117] text-slate-200 min-h-screen flex">
@@ -213,6 +219,8 @@
             console.log('Tipo de datos:', typeof d);
 
             const s = (v) => v || '---';
+
+            // ── HEADER ──
             document.getElementById('page-title').textContent = s(d.WEB_DS_MENU_DASHBOARD);
             document.getElementById('page-subtitle').textContent = s(d.WEB_DS_HEADER_SUBTITULO);
             document.getElementById('label-ultima-act').textContent = s(d.WEB_DS_HEADER_ULTIMA_ACT);
@@ -221,6 +229,7 @@
             document.getElementById('fuente-header').textContent = s(d.WEB_UI_SIS_FUENTE_ACT);
             document.getElementById('calc-tab').textContent = s(d.WEB_DS_CALC_BTN);
 
+            // ── MENÚ ──
             document.getElementById('menu-titulo').textContent = s(d.WEB_DS_MENU_TITULO);
             document.getElementById('menu-dashboard').textContent = s(d.WEB_DS_MENU_DASHBOARD);
             document.getElementById('menu-presupuestos').textContent = s(d.WEB_DS_MENU_PRESUPUESTOS);
@@ -231,30 +240,46 @@
             document.getElementById('sistema-etiqueta').textContent = s(d.WEB_DS_SISTEMA_ETIQUETA);
             document.getElementById('sistema-auto').textContent = s(d.WEB_DS_SISTEMA_AUTO);
 
+            // ── DIVISAS ──
             document.getElementById('divisas-titulo').textContent = s(d.WEB_DS_DIV_TITULO);
             document.getElementById('tc-ref-etq').textContent = s(d.WEB_UI_TC_REF_ETQ);
             document.getElementById('tc-ref-val').textContent = s(d.WEB_UI_TC_REF_VAL_API);
             document.getElementById('tc-ref-dif').textContent = s(d.WEB_UI_TC_REF_DIF);
-            document.getElementById('tc-ref-ico').textContent = s(d.WEB_UI_TC_REF_ICO);
+            const refIco = d.WEB_UI_TC_REF_ICO || '●';
+            document.getElementById('tc-ref-ico').textContent = refIco;
+            document.getElementById('tc-ref-ico').className = `text-sm ml-1 ${refIco === '▲' ? 'trend-up' : refIco === '▼' ? 'trend-down' : 'trend-flat'}`;
+
             document.getElementById('tc-vta-etq').textContent = s(d.WEB_UI_TC_VTA_ETQ);
             document.getElementById('tc-vta-val').textContent = s(d.WEB_UI_TC_VTA_VAL_LOC);
             document.getElementById('tc-vta-dif').textContent = s(d.WEB_UI_TC_VTA_DIF);
-            document.getElementById('tc-vta-ico').textContent = s(d.WEB_UI_TC_VTA_ICO);
+            const vtaIco = d.WEB_UI_TC_VTA_ICO || '●';
+            document.getElementById('tc-vta-ico').textContent = vtaIco;
+            document.getElementById('tc-vta-ico').className = `text-sm ml-1 ${vtaIco === '▲' ? 'trend-up' : vtaIco === '▼' ? 'trend-down' : 'trend-flat'}`;
+
             document.getElementById('tc-cpra-etq').textContent = s(d.WEB_UI_TC_CPRA_ETQ);
             document.getElementById('tc-cpra-val').textContent = s(d.WEB_UI_TC_CPRA_VAL_LOC);
             document.getElementById('tc-cpra-dif').textContent = s(d.WEB_UI_TC_CPRA_DIF);
-            document.getElementById('tc-cpra-ico').textContent = s(d.WEB_UI_TC_CPRA_ICO);
+            const cpraIco = d.WEB_UI_TC_CPRA_ICO || '●';
+            document.getElementById('tc-cpra-ico').textContent = cpraIco;
+            document.getElementById('tc-cpra-ico').className = `text-sm ml-1 ${cpraIco === '▲' ? 'trend-up' : cpraIco === '▼' ? 'trend-down' : 'trend-flat'}`;
 
+            // ── PVP ACTUAL ──
             document.getElementById('pvp-titulo').textContent = s(d.WEB_DS_PVP_TITULO);
             document.getElementById('pvp-oro-etq').textContent = s(d.WEB_UI_NG_TAG_M1_L2);
             document.getElementById('pvp-oro-val').textContent = s(d.WEB_UI_NG_CIE_M1_PVP_VAL);
             document.getElementById('pvp-oro-dif').textContent = s(d.WEB_UI_NG_CIE_M1_PVP_DIF);
+            const difOro = parseFloat(d.WEB_UI_NG_CIE_M1_PVP_DIF) || 0;
+            document.getElementById('pvp-oro-dif').className = `text-sm ${difOro > 0 ? 'diff-up' : difOro < 0 ? 'diff-down' : 'diff-flat'}`;
             document.getElementById('pvp-oro-ts').textContent = s(d.WEB_DS_PVP_TS);
+
             document.getElementById('pvp-plata-etq').textContent = s(d.WEB_UI_NG_TAG_M2_L1);
             document.getElementById('pvp-plata-val').textContent = s(d.WEB_UI_NG_CIE_M2_PVP_VAL);
             document.getElementById('pvp-plata-dif').textContent = s(d.WEB_UI_NG_CIE_M2_PVP_DIF);
+            const difPlata = parseFloat(d.WEB_UI_NG_CIE_M2_PVP_DIF) || 0;
+            document.getElementById('pvp-plata-dif').className = `text-sm ${difPlata > 0 ? 'diff-up' : difPlata < 0 ? 'diff-down' : 'diff-flat'}`;
             document.getElementById('pvp-plata-ts').textContent = s(d.WEB_DS_PVP_TS);
 
+            // ── MERCADO ──
             document.getElementById('mercado-titulo').textContent = s(d.WEB_DS_MER_TITULO);
             document.getElementById('market-ts').textContent = s(d.WEB_UI_MC_TS_API);
 
@@ -269,15 +294,18 @@
             container.innerHTML = metales.map(m => {
                 const gv = s(d[`WEB_UI_MC_${m.id}_GR_VAL_LOC`]);
                 const gd = s(d[`WEB_UI_MC_${m.id}_GR_DIF_LOC`]);
-                const gi = s(d[`WEB_UI_MC_${m.id}_GR_ICO`]);
+                const gi = s(d[`WEB_UI_MC_${m.id}_GR_ICO`]) || '●';
                 const ga = s(d[`WEB_UI_MC_${m.id}_GR_VAL_API`]);
                 const ov = s(d[`WEB_UI_MC_${m.id}_OZ_VAL_LOC`]);
                 const od = s(d[`WEB_UI_MC_${m.id}_OZ_DIF_LOC`]);
-                const oi = s(d[`WEB_UI_MC_${m.id}_OZ_ICO`]);
+                const oi = s(d[`WEB_UI_MC_${m.id}_OZ_ICO`]) || '●';
                 const oa = s(d[`WEB_UI_MC_${m.id}_OZ_VAL_API`]);
                 const tg = s(d[`WEB_UI_MC_${m.id}_TAG_GR`]);
                 const to = s(d[`WEB_UI_MC_${m.id}_TAG_OZ`]);
+
                 const ic = (v) => v === '▲' ? 'trend-up' : v === '▼' ? 'trend-down' : 'trend-flat';
+                const giClass = gi === '▲' ? 'metal-ico-up' : gi === '▼' ? 'metal-ico-down' : 'metal-ico-flat';
+                const oiClass = oi === '▲' ? 'metal-ico-up' : oi === '▼' ? 'metal-ico-down' : 'metal-ico-flat';
 
                 const tieneDatos = gv !== '---' || ga !== '---' || ov !== '---' || oa !== '---';
 
@@ -289,17 +317,22 @@
                 }
 
                 return `<div class="bg-slate-900/30 border border-slate-700/30 rounded-lg p-3">
-                    <div class="flex items-center gap-2 mb-2"><span class="font-bold text-white">${m.nombre}</span><span class="text-sm ${ic(gi)}">${gi}</span></div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="font-bold text-white">${m.nombre}</span>
+                        <span class="text-sm ${giClass}">${gi}</span>
+                    </div>
                     <div class="space-y-1 text-sm">
                         <div class="flex justify-between"><span class="text-slate-400">${tg}</span><span class="font-medium mono">${gv}</span></div>
                         <div class="flex justify-between text-xs"><span class="mono ${ic(gd)}">${gd}</span></div>
                         <div class="flex justify-between text-xs border-t border-slate-800/50 pt-1"><span class="text-slate-400">${to}</span><span class="font-medium mono">${ov}</span></div>
                         <div class="flex justify-between text-xs"><span class="mono ${ic(od)}">${od}</span></div>
                         <div class="flex justify-between text-xs text-slate-500"><span class="mono">${ga}</span></div>
+                        <div class="flex justify-between text-xs text-slate-500"><span class="mono ${oiClass}">${oi}</span></div>
                     </div>
                 </div>`;
             }).join('');
 
+            // ── NEGOCIO ──
             document.getElementById('negocio-titulo').textContent = s(d.WEB_DS_NEG_TITULO);
 
             const boxes = ['CIE', 'AM', 'MD', 'PM'];
@@ -322,7 +355,11 @@
 
             if (hayDatos) {
                 let html = `<table class="w-full text-sm negocio-tabla"><thead><tr><th class="w-1/4">${s(d.WEB_UI_NG_ETQ_TIT)}</th>`;
-                boxes.forEach(b => { html += `<th class="text-center">${s(d[`WEB_UI_NG_${b}_ETQ`])}<br><span class="text-[10px] font-normal text-slate-600">${s(d[`WEB_UI_NG_${b}_TS`])}</span></th>`; });
+                boxes.forEach(b => {
+                    const etq = s(d[`WEB_UI_NG_${b}_ETQ`]);
+                    const ts = s(d[`WEB_UI_NG_${b}_TS`]);
+                    html += `<th class="text-center">${etq}<br><span class="text-[10px] font-normal text-slate-600">${ts}</span></th>`;
+                });
                 html += `</tr></thead><tbody>`;
                 items.forEach(it => {
                     const p = it.pvp || false;
@@ -341,6 +378,7 @@
                 nc.innerHTML = '';
             }
 
+            // ── FOOTER ──
             document.getElementById('footer-info').innerHTML = s(d.WEB_DS_FOOTER_INFO) + ' <span id="api-count" class="font-medium">' + s(d.WEB_UI_MC_CT_API) + '</span>';
         }
 
