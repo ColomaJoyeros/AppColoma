@@ -9,18 +9,23 @@
     <style>
         * { font-family: 'Inter', sans-serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* ── Sidebar ── */
         .sidebar-item { transition: all 0.2s ease; }
         .sidebar-item:hover { background: rgba(234, 179, 8, 0.1); color: #eab308; }
         .sidebar-item.active { background: rgba(234, 179, 8, 0.15); color: #eab308; border-left: 3px solid #eab308; }
-        .trend-up { color: #4ade80; }
-        .trend-down { color: #f87171; }
-        .trend-flat { color: #94a3b8; }
+        
+        /* ── Scrollbar ── */
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 2px; }
+        
+        /* ── Drawer ── */
         .drawer { transition: transform 0.3s ease; }
         .drawer.open { transform: translateX(0); }
         .overlay { transition: opacity 0.3s ease; }
+        
+        /* ── Pestaña CALC ── */
         .calc-tab {
             position: fixed;
             right: 0;
@@ -43,17 +48,79 @@
             box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
         }
         .calc-tab:hover { background: #f59e0b; color: #0f172a; border-color: #f59e0b; padding-right: 14px; }
-        .negocio-tabla th { text-align: left; padding: 10px 8px; border-bottom: 1px solid #334155; color: #94a3b8; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .negocio-tabla td { padding: 10px 8px; border-bottom: 1px solid #1e293b; font-size: 0.9rem; }
-        .pvp-card .price { font-size: 2rem; font-weight: 700; }
-        .pvp-card .timestamp { font-size: 0.75rem; color: #94a3b8; }
-        .pvp-card .diff { font-size: 0.8rem; }
-        .diff-up { color: #4ade80; }
-        .diff-down { color: #f87171; }
-        .diff-flat { color: #94a3b8; }
-        .metal-ico-up { color: #4ade80; }
-        .metal-ico-down { color: #f87171; }
-        .metal-ico-flat { color: #94a3b8; }
+        
+        /* ── Estilos de tendencia ── */
+        .trend-up { color: #4ade80; }
+        .trend-down { color: #f87171; }
+        .trend-flat { color: #94a3b8; }
+        
+        .diff-up { color: #4ade80; font-weight: 600; }
+        .diff-down { color: #f87171; font-weight: 600; }
+        .diff-flat { color: #94a3b8; font-weight: 600; }
+        
+        .metal-ico-up { color: #4ade80; font-weight: 700; }
+        .metal-ico-down { color: #f87171; font-weight: 700; }
+        .metal-ico-flat { color: #94a3b8; font-weight: 700; }
+        
+        /* ── Tabla de Negocio ── */
+        .negocio-tabla th {
+            text-align: left;
+            padding: 10px 8px;
+            border-bottom: 1px solid #334155;
+            color: #94a3b8;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .negocio-tabla td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #1e293b;
+            font-size: 0.9rem;
+        }
+        .negocio-tabla .pvp-row {
+            background: rgba(234, 179, 8, 0.05);
+        }
+        
+        /* ── Tarjetas ── */
+        .card-dark {
+            background: #161b22;
+            border: 1px solid #1e293b;
+            border-radius: 0.75rem;
+            padding: 1rem;
+        }
+        .card-pvp {
+            background: #161b22;
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            border-radius: 0.75rem;
+            padding: 1rem;
+        }
+        .pvp-price {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .pvp-timestamp {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+        
+        .metal-card {
+            background: rgba(15, 23, 42, 0.3);
+            border: 1px solid rgba(51, 65, 85, 0.3);
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+        }
+        
+        .block-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #64748b;
+            margin-bottom: 0.75rem;
+        }
     </style>
 </head>
 <body class="bg-[#0d1117] text-slate-200 min-h-screen flex">
@@ -107,8 +174,8 @@
 
         <div class="p-6 space-y-6 flex-1">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="bg-[#161b22] border border-slate-800 rounded-xl p-4">
-                    <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3" id="divisas-titulo"></div>
+                <div class="card-dark">
+                    <div class="block-title" id="divisas-titulo"></div>
                     <div class="space-y-3">
                         <div class="flex justify-between items-center">
                             <span class="text-base text-slate-400" id="tc-ref-etq"></span>
@@ -137,24 +204,24 @@
                     </div>
                 </div>
 
-                <div class="bg-[#161b22] border border-yellow-500/30 rounded-xl p-4">
-                    <div class="text-sm font-semibold text-yellow-500 uppercase tracking-wider mb-3" id="pvp-titulo"></div>
+                <div class="card-pvp">
+                    <div class="block-title text-yellow-500" id="pvp-titulo"></div>
                     <div class="space-y-4">
                         <div>
                             <div class="text-sm text-slate-400 mb-1" id="pvp-oro-etq"></div>
                             <div class="flex justify-between items-baseline">
-                                <span class="text-3xl font-bold text-yellow-400 mono" id="pvp-oro-val">---</span>
+                                <span class="pvp-price text-yellow-400" id="pvp-oro-val">---</span>
                                 <span class="text-sm" id="pvp-oro-dif">---</span>
                             </div>
-                            <div class="text-xs text-slate-500 mt-1" id="pvp-oro-ts">---</div>
+                            <div class="pvp-timestamp" id="pvp-oro-ts">---</div>
                         </div>
                         <div class="pt-3 border-t border-slate-800">
                             <div class="text-sm text-slate-400 mb-1" id="pvp-plata-etq"></div>
                             <div class="flex justify-between items-baseline">
-                                <span class="text-3xl font-bold text-slate-300 mono" id="pvp-plata-val">---</span>
+                                <span class="pvp-price text-slate-300" id="pvp-plata-val">---</span>
                                 <span class="text-sm" id="pvp-plata-dif">---</span>
                             </div>
-                            <div class="text-xs text-slate-500 mt-1" id="pvp-plata-ts">---</div>
+                            <div class="pvp-timestamp" id="pvp-plata-ts">---</div>
                         </div>
                     </div>
                 </div>
@@ -163,9 +230,9 @@
             </div>
 
             <div>
-                <div class="bg-[#161b22] border border-slate-800 rounded-xl p-4">
+                <div class="card-dark">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="text-sm font-semibold text-slate-500 uppercase tracking-wider" id="mercado-titulo"></div>
+                        <div class="block-title" id="mercado-titulo"></div>
                         <span class="text-xs text-slate-600 mono bg-slate-800 px-2 py-0.5 rounded" id="market-ts">---</span>
                     </div>
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="mercado-container"></div>
@@ -173,8 +240,8 @@
             </div>
 
             <div>
-                <h2 class="text-base font-semibold text-slate-400 uppercase tracking-wider mb-3" id="negocio-titulo"></h2>
-                <div class="bg-[#161b22] border border-slate-800 rounded-xl overflow-x-auto" id="negocio-container"></div>
+                <h2 class="block-title text-base font-semibold text-slate-400" id="negocio-titulo"></h2>
+                <div class="card-dark overflow-x-auto" id="negocio-container"></div>
             </div>
         </div>
 
@@ -310,13 +377,10 @@
                 const tieneDatos = gv !== '---' || ga !== '---' || ov !== '---' || oa !== '---';
 
                 if (!tieneDatos) {
-                    return `<div class="bg-slate-900/30 border border-slate-700/30 rounded-lg p-3">
-                        <div class="flex items-center gap-2 mb-2"><span class="font-bold text-white">${m.nombre}</span></div>
-                        <div class="text-xs text-slate-500">---</div>
-                    </div>`;
+                    return `<div class="metal-card"><div class="flex items-center gap-2 mb-2"><span class="font-bold text-white">${m.nombre}</span></div><div class="text-xs text-slate-500">---</div></div>`;
                 }
 
-                return `<div class="bg-slate-900/30 border border-slate-700/30 rounded-lg p-3">
+                return `<div class="metal-card">
                     <div class="flex items-center gap-2 mb-2">
                         <span class="font-bold text-white">${m.nombre}</span>
                         <span class="text-sm ${giClass}">${gi}</span>
@@ -363,7 +427,7 @@
                 html += `</tr></thead><tbody>`;
                 items.forEach(it => {
                     const p = it.pvp || false;
-                    html += `<tr class="${p ? 'bg-yellow-500/5' : ''}"><td class="font-medium ${p ? 'text-yellow-400' : 'text-slate-200'}">${it.etq}</td>`;
+                    html += `<tr class="${p ? 'pvp-row' : ''}"><td class="font-medium ${p ? 'text-yellow-400' : 'text-slate-200'}">${it.etq}</td>`;
                     boxes.forEach(b => {
                         const v = s(d[`WEB_UI_NG_${b}_${it.id}_VAL`]);
                         const df = s(d[`WEB_UI_NG_${b}_${it.id}_DIF`]);
